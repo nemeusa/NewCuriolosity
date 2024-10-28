@@ -208,15 +208,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMov: 3
   rb: {fileID: 0}
-  maxSpeed: 20
-  acceleration: 5
-  changeCode: {fileID: 0}
-  movSpeed: 5
-  jumpForce: 9
-  fallSpeed: 3.5
-  helicopterTime: 0.8
-  cooldownHelicopter: 0
-  maxPulsaciones: 200
   forceJump: 7.5
   jumpTime: 0.3
   plantZone: 0
@@ -287,8 +278,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 72
-  goatTrue: 0
-  ratTrue: 0
 --- !u!114 &947302944906455207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5458,7 +5447,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8775218934475885273}
-  - {fileID: 7094656685365949882}
+  - {fileID: 7349859026641556050}
   m_Father: {fileID: 7383346093572997405}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3835710227981904333
@@ -5931,7 +5920,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe098ea1fe764284d934ceca39db8a62, type: 3}
---- !u!4 &7094656685365949882 stripped
+--- !u!4 &7349859026641556050 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe098ea1fe764284d934ceca39db8a62, type: 3}
   m_PrefabInstance: {fileID: 7349859026641556049}

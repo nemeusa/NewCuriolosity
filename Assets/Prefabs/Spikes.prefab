@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  LifeTime: 99999
+  LifeTime: 1e+14
   healtCode: {fileID: 0}
 --- !u!1001 &2584253184725694566
 PrefabInstance:

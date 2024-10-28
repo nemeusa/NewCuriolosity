@@ -18,13 +18,20 @@ public class PlayerLife : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        _life -= damage;
+        //if (gameObject.layer == LayerMask.NameToLayer("Turtle")) IsParry = true;
+        if (turtle != null) IsParry = true;
 
-        if (_life <= 0)
+        else
         {
+            _life -= damage;
+
+            if (_life <= 0)
+            {
                 Die();
+            }
+            Debug.Log("recibiste " + _life + " de daño");
+            IsParry = false;
         }
-        Debug.Log("recibiste " + _life + " de daño");
 
         _healthBar.fillAmount = _life / 100f;
 

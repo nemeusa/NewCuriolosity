@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 3125595952349144493}
   - component: {fileID: 3081988872784105694}
   - component: {fileID: 6078770076340422981}
-  - component: {fileID: -3158984338683311312}
   m_Layer: 0
   m_Name: Player Full True
   m_TagString: Player
@@ -263,7 +262,7 @@ MonoBehaviour:
   forceJump: 7.5
   jumpTime: 0.3
   plantZone: 0
-  jumpParticles: {fileID: 4899183758103632805}
+  jumpParticles: {fileID: 856272744326697126}
   scene: Movimiento
   gravityMultiplier: 2.7
   raycastMaxDistance: 1.0001
@@ -332,23 +331,6 @@ MonoBehaviour:
     m_Bits: 72
   goatTrue: 0
   ratTrue: 0
---- !u!114 &-3158984338683311312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3685463895942241668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4905e916ac61c2f4196da3564e6318c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transitionAnim: {fileID: 0}
-  _transitionTime: 0.5
-  _healthBar: {fileID: 0}
-  _life: 100
-  IsParry: 0
 --- !u!1 &4072993269851577817
 GameObject:
   m_ObjectHideFlags: 0
@@ -5664,7 +5646,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4698199010173897623}
+  - {fileID: 660948559349252244}
   m_Father: {fileID: 2654479678827824728}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &599584042403379919
@@ -5960,12 +5942,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
---- !u!4 &4698199010173897623 stripped
+--- !u!4 &660948559349252244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 107540711077034587, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
   m_PrefabInstance: {fileID: 4633452704228864460}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &4899183758103632805 stripped
+--- !u!198 &856272744326697126 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 265766274217486953, guid: d3015b7eea383f64d8b81f965cc466e7, type: 3}
   m_PrefabInstance: {fileID: 4633452704228864460}
