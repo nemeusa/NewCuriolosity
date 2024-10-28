@@ -24,13 +24,13 @@ public class BulletEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerLife healtCode = other.gameObject.GetComponent<PlayerLife>();
-        if (healtCode != null && !isReflected)
+        PlayerLife healtCode = other.gameObject.GetComponentInParent<PlayerLife>();
+
+        if (healtCode != null && !isReflected && !TurtleController.isParrying)
         {
-            // Lógica para dañar al jugador
             Debug.Log("auch");
-            //Destroy(other.gameObject);
             healtCode.TakeDamage(damage);
+            Destroy(gameObject);
         }
 
         EnemyLife enemy = other.gameObject.GetComponent<EnemyLife>();
@@ -38,11 +38,8 @@ public class BulletEnemy : MonoBehaviour
         if (enemy != null && isReflected)
         {
             Destroy(other.gameObject);
-            Destroy(gameObject);
-            // Lógica para dañar al enemigo
-        }
-       
-        //Destroy(gameObject);
+            Debug.Log("FUNCAAA");
+        } 
     }
 
 
