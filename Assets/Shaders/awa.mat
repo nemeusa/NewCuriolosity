@@ -59,7 +59,7 @@ Material:
     - _FloatVelocidad: 0.03
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _deep: 0.43
+    - _deep: 10
     - _fuerzaNormal: 0.36
     - _velocidadOlas: 1
     m_Colors:

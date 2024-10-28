@@ -11,26 +11,18 @@ public class BulletEnemy : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(DestroyBullet(2.5f));
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = -transform.up * speed;
     }
 
-    void Update()
-    {
-        if (isReflected) color();
-        Destroy(gameObject, 2.5f);
-        //transform.Translate(Vector3.down * speed * Time.deltaTime);   
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        PlayerLife healtCode = other.gameObject.GetComponent<PlayerLife>();
-        if (healtCode != null && !isReflected)
+        PlayerLife healthCode = other.gameObject.GetComponent<PlayerLife>();
+        if (healthCode != null && !isReflected)
         {
-            // Lógica para dañar al jugador
             Debug.Log("auch");
-            //Destroy(other.gameObject);
-            healtCode.TakeDamage(damage);
+            healthCode.TakeDamage(damage);
         }
 
         EnemyLife enemy = other.gameObject.GetComponent<EnemyLife>();
@@ -39,16 +31,20 @@ public class BulletEnemy : MonoBehaviour
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
-            // Lógica para dañar al enemigo
         }
-       
-        //Destroy(gameObject);
     }
 
-
-    void color()
+    public void Reflect()
     {
+        StopAllCoroutines();
+        StartCoroutine(DestroyBullet(1));
         Renderer objRenderer = GetComponent<Renderer>();
         objRenderer.material.color = Color.green;
+    }
+
+    IEnumerator DestroyBullet(float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(gameObject);
     }
 }

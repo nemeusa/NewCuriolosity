@@ -32,11 +32,9 @@ public class TurtleController : CreatureController
 
     IEnumerator Parry()
     {
-        //Debug.Log("parrying..");
         isParrying = true;
         yield return new WaitForSeconds(parryWindow);
         isParrying = false;
-        //Debug.Log("parry end");
     }
 
 
@@ -50,7 +48,7 @@ public class TurtleController : CreatureController
         {
             rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z);
 
-            bullet.isReflected = true;
+            bullet.Reflect();
 
         }
 
@@ -59,8 +57,7 @@ public class TurtleController : CreatureController
             if (Dir > 0) rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z + 2);
             else if (Dir < 0) rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z - 2);
 
-            //rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z + 2);
-            bullet.isReflected = true;
+            bullet.Reflect();
 
         }
     }

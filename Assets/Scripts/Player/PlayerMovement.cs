@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -50,6 +51,9 @@ public class PlayerMovement : MonoBehaviour
 
     public Scene_Manager sceneManager;
     
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private KeyCode lookDown;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -83,6 +87,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             isJumping = false;
+        }
+
+        if (Input.GetKeyDown(lookDown))
+        {
+            virtualCamera.Priority = 3;
+        }
+        else if (Input.GetKeyUp(lookDown))
+        {
+            virtualCamera.Priority = 0;
         }
     }
 
@@ -188,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, -fallSpeed, rb.velocity.z);
         rb.drag = 10f;
 
-        Debug.Log("Ratón usando su cola como helicóptero! Pulsaciones restantes: " + pulsacionesRestantes);
+        Debug.Log("Ratï¿½n usando su cola como helicï¿½ptero! Pulsaciones restantes: " + pulsacionesRestantes);
 
         yield return new WaitForSeconds(helicopterTime);
 
