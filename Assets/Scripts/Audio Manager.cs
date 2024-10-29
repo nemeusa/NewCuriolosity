@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    #region "Audio Sources"
+
     [Header("<color=#fce357>Sources</color>")]
     [SerializeField] private AudioSource _mSource;
     [SerializeField]  private AudioSource _tSource;
@@ -40,6 +42,24 @@ public class AudioManager : MonoBehaviour
         set { _bulletSource = value; }
     }
 
+    [SerializeField] private AudioSource _damageSource;
+    public AudioSource DamageSource
+    {
+        get { return _damageSource; }
+        set { _damageSource = value; }
+    }
+
+    [SerializeField] private AudioSource _deathSource;
+    public AudioSource DeathSource
+    {
+        get { return _deathSource; }
+        set { _deathSource = value; }
+    }
+
+    #endregion
+
+    #region "Audio Clips"
+
     [Header("<color=#fce357>Clips</color>")]
     public AudioClip background;
     public AudioClip transformation;
@@ -47,6 +67,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip goat;
     public AudioClip turtle;
     public AudioClip bullet;
+    public AudioClip damage;
+    public AudioClip death;
+
+    #endregion
 
 
     private void Start()
@@ -60,5 +84,7 @@ public class AudioManager : MonoBehaviour
         _goatSource.clip = goat;
         _turtleSource.clip = turtle;
         _bulletSource.clip = bullet;
+        _damageSource.clip = damage;
+        _deathSource.clip = death;
     }
 }
