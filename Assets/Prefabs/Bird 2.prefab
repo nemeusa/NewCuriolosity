@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2080656518133289408}
   - component: {fileID: 4478853876466206831}
   - component: {fileID: 1329210946599126014}
+  - component: {fileID: 6022709440910207493}
   m_Layer: 0
   m_Name: Bird 2
   m_TagString: Untagged
@@ -136,8 +137,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.8114239, y: 1.2913704, z: 5.3627286}
+  m_Center: {x: -0.58228076, y: 1.9599819, z: 1.7234135}
 --- !u!114 &1329210946599126014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +156,15 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3708262633209291244, guid: d9e87eaa12cfc634c8d8ba40df5a206a, type: 3}
   bulletSpawnPoint: {fileID: 5659378622776207678}
   fireRate: 2
+--- !u!114 &6022709440910207493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7659360956185036110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a510e1f4d88ac014da51a8482edc2bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
