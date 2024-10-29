@@ -7,7 +7,7 @@ public class BulletEnemy : MonoBehaviour
 {
     public float damage;
     [SerializeField] float speed;
-    public bool isReflected;
+    //public bool isReflected;
 
     private void Start()
     {
@@ -18,26 +18,30 @@ public class BulletEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerLife healthCode = other.gameObject.GetComponent<PlayerLife>();
-        if (healthCode != null && !isReflected)
+        PlayerLife healtCode = other.gameObject.GetComponentInParent<PlayerLife>();
+
+        if (healtCode != null && !TurtleController.isParrying)
         {
             Debug.Log("auch");
-            healthCode.TakeDamage(damage);
+            healtCode.TakeDamage(damage);
+            Destroy(gameObject);
         }
 
         EnemyLife enemy = other.gameObject.GetComponent<EnemyLife>();
 
-        if (enemy != null && isReflected)
+        if (enemy != null && TurtleController.isParrying)
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
+            Debug.Log("anda crack");
         }
+        else if (enemy == null && TurtleController.isParrying) Debug.Log("no anda pa´");
     }
 
     public void Reflect()
     {
         StopAllCoroutines();
-        StartCoroutine(DestroyBullet(1));
+        StartCoroutine(DestroyBullet(2));
         Renderer objRenderer = GetComponent<Renderer>();
         objRenderer.material.color = Color.green;
     }

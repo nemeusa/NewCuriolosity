@@ -11,7 +11,7 @@ public class Parry : MonoBehaviour
     private void Update()
     {
         GameObject bullet = GameObject.Find("Bullet Enemy"); ;
-        if (playerLife.IsParry && enemyCode.isReflected)
+        if (playerLife.IsParry)
         {
             Instantiate(Bullet, spawnBullet.position, spawnBullet.rotation);
         }
