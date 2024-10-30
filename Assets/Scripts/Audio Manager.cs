@@ -56,6 +56,13 @@ public class AudioManager : MonoBehaviour
         set { _deathSource = value; }
     }
 
+    [SerializeField] private AudioSource _shieldSource;
+    public AudioSource ShieldSource
+    {
+        get { return _shieldSource; }
+        set { _shieldSource = value; }
+    }
+
     #endregion
 
     #region "Audio Clips"
@@ -69,6 +76,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip bullet;
     public AudioClip damage;
     public AudioClip death;
+    public AudioClip shield;
 
     #endregion
 
@@ -86,5 +94,6 @@ public class AudioManager : MonoBehaviour
         _bulletSource.clip = bullet;
         _damageSource.clip = damage;
         _deathSource.clip = death;
+        _shieldSource.clip = shield;
     }
 }

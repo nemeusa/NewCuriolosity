@@ -7,6 +7,8 @@ public class TurtleParry : MonoBehaviour
 {
     private Color colorOriginal;
     private Renderer objRenderer;
+    [SerializeField] private GameObject shield;
+    [SerializeField] private Animation shieldAnim;
 
     private void Start()
     {
@@ -16,6 +18,8 @@ public class TurtleParry : MonoBehaviour
         {
             colorOriginal = objRenderer.material.color;
         }
+
+        shield.SetActive(false);
     }
 
     private void Update()
@@ -23,6 +27,8 @@ public class TurtleParry : MonoBehaviour
         if (TurtleController.isParrying)
         {
             CambiarColorVerde();
+            shield.SetActive(true);
+            shieldAnim.Play();
         }
         else RestaurarColorOriginal();
     }
@@ -41,6 +47,7 @@ public class TurtleParry : MonoBehaviour
         if (objRenderer != null)
         {
             objRenderer.material.color = colorOriginal;
+            shield.SetActive(false);
         }
     }
 }

@@ -39,6 +39,8 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.13409218, g: 0.11692176, b: 0.22431257, a: 1}
+
+  m_IndirectSpecularColor: {r: 0.12053772, g: 0.10152351, b: 0.1943621, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19817,6 +19819,10 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 935872186}
+    - target: {fileID: -3158984338683311312, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
+      propertyPath: _audioManager
+      value: 
+      objectReference: {fileID: 619381653}
     - target: {fileID: -3158984338683311312, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
       propertyPath: _transitionAnim
       value: 
