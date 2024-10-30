@@ -17,7 +17,7 @@ public class GoatController : CreatureController
 
     public override void OnFixedUpdate()
     {
-        Move();
+        //Move();
     }
 
     public override void OnStart()
