@@ -53,7 +53,7 @@ Material:
     - _BUILTIN_QueueControl: 1
     - _BUILTIN_QueueOffset: 0
     - _Float: 579.92
-    - _HorizonBlend: 12
+    - _HorizonBlend: 10.3
     - _QueueControl: 0
     - _QueueOffset: 1
     - _StarHeight: 500
@@ -61,7 +61,7 @@ Material:
     - _StarsIntensity: 1
     - _nadir: 0.31
     - _speedSpark: 0.002
-    - _zenithBlend: 1.8
+    - _zenithBlend: 0.5
     m_Colors:
     - _Color: {r: 0.9944772, g: 1, b: 0.8245283, a: 0}
     - _ColorSky: {r: 0.15777856, g: 0.16311595, b: 0.3018868, a: 0}
