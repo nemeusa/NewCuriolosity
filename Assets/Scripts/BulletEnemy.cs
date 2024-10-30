@@ -7,7 +7,7 @@ public class BulletEnemy : MonoBehaviour
 {
     public float damage;
     [SerializeField] float speed;
-    //public bool isReflected;
+    public bool isReflected;
 
     private void Start()
     {
@@ -29,7 +29,7 @@ public class BulletEnemy : MonoBehaviour
 
         EnemyLife enemy = other.gameObject.GetComponent<EnemyLife>();
 
-        if (enemy != null && TurtleController.isParrying)
+        if (enemy != null && isReflected)
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
@@ -44,6 +44,7 @@ public class BulletEnemy : MonoBehaviour
         StartCoroutine(DestroyBullet(2));
         Renderer objRenderer = GetComponent<Renderer>();
         objRenderer.material.color = Color.green;
+        isReflected = true;
     }
 
     IEnumerator DestroyBullet(float time)
