@@ -19,18 +19,10 @@ public class Bullet2 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SpawnDoor spawnCode2 = other.GetComponent<SpawnDoor>();
-        Enemy2 enemyCode2 = other.GetComponent<Enemy2>();
+        EnemyLife enemy = other.gameObject.GetComponent<EnemyLife>();
 
-        if (enemyCode2 != null) Destroy(other.gameObject);
-
-        if (spawnCode2 != null)
-        {
-            Destroy(other.gameObject);
-            Debug.Log("MUERTo xd");
-        }
+        if (enemy != null) Destroy(other.gameObject);
 
         Destroy(gameObject);
-        Debug.Log("choque xd");
     }
 }

@@ -52,7 +52,9 @@ public class PlayerMovement : MonoBehaviour
     public Scene_Manager sceneManager;
     
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private CinemachineVirtualCamera virtualCameraUp;
     [SerializeField] private KeyCode lookDown;
+    [SerializeField] private KeyCode lookUp;
     
     private void Awake()
     {
@@ -70,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         else
             RatJump();
     }
-     private void Update()
+    private void Update()
     {
         plantZone = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, plantMask);
         changeLevel = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, levelMask);
@@ -96,6 +98,15 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyUp(lookDown))
         {
             virtualCamera.Priority = 0;
+        }
+
+        if (Input.GetKeyDown(lookUp))
+        {
+            virtualCameraUp.Priority = 3;
+        }
+        else if (Input.GetKeyUp(lookUp))
+        {
+            virtualCameraUp.Priority = 0;
         }
     }
 

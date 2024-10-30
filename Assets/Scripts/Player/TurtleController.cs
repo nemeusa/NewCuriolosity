@@ -23,7 +23,7 @@ public class TurtleController : CreatureController
 
     public override void OnUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             _changeAnimal.StartCoroutine(Parry());
             color();
@@ -70,6 +70,7 @@ public class TurtleController : CreatureController
         {
             Debug.Log("no colision");
         }
+
         else
         {
             Debug.Log("colision");
