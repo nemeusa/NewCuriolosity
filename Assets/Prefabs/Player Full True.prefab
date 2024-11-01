@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534a2e8a820e14345adf34b45cbb64ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioManager: {fileID: 3751623773241381106, guid: 6053954c398264a42b31ca689c92c951, type: 3}
 --- !u!82 &5004962057175835154
 AudioSource:
   m_ObjectHideFlags: 0
@@ -472,12 +471,13 @@ MonoBehaviour:
   helicopterTime: 1
   cooldownHelicopter: 0
   maxPulsaciones: 1000
-  forceJump: 7.5
-  jumpTime: 0.3
+  forceJump: 9.3
+  jumpTime: 0.7
   plantZone: 0
   jumpParticles: {fileID: 4899183758103632805}
   scene: Movimiento
   gravityMultiplier: 2.7
+  gravityMultiplierUp: 2.5
   raycastMaxDistance: 1.0001
   jumpMask:
     serializedVersion: 2
@@ -490,7 +490,9 @@ MonoBehaviour:
     m_Bits: 256
   sceneManager: {fileID: 0}
   virtualCamera: {fileID: 0}
+  virtualCameraUp: {fileID: 0}
   lookDown: 0
+  lookUp: 0
 --- !u!54 &3081988872784105694
 Rigidbody:
   m_ObjectHideFlags: 0

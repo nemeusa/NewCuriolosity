@@ -23,7 +23,7 @@ public class TurtleController : CreatureController
 
     public override void OnUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Fire1") && !isParrying)
         {
             _changeAnimal.StartCoroutine(Parry());
             color();

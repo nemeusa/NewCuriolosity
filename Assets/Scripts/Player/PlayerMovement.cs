@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] string scene;
     
     [SerializeField] float gravityMultiplier;
+    [SerializeField] float gravityMultiplierUp;
 
     [SerializeField] float raycastMaxDistance;
     [SerializeField] LayerMask jumpMask, plantMask, levelMask;
@@ -167,11 +168,22 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(Vector3.up * forceJump * Time.fixedDeltaTime, ForceMode.Impulse);
                 //rb.AddForce(Vector3.up * forceJump * Time.fixedDeltaTime);
             }
-        } 
+        }
 
-        if (!takeFloor && rb.velocity.y < 0)
+        else
         {
-            rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplier - 1), ForceMode.Acceleration);
+            isJumping = false;
+        }
+
+        if (rb.velocity.y > 0)
+        {
+        
+            rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplierUp / 2f), ForceMode.Acceleration);
+        }
+        else if (rb.velocity.y < 0 && !takeFloor)
+        {
+
+            rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplier), ForceMode.Acceleration);
         }
     }
 

@@ -15,13 +15,13 @@ public class PlayerShoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
+        if (Input.GetButtonDown("Fire2") && Time.time >= nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;
         }
         
-        if (Input.GetButtonDown("Fire2") && Time.time >= nextFireTime)
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
         {
             Shoot2();
             nextFireTime = Time.time + 1f / fireRate;
