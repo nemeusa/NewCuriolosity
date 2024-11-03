@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,12 +10,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speedMov;
     public Rigidbody rb;
 
-
     [Header("goat")]
     [SerializeField] private float maxSpeed = 20f;
     [SerializeField] private float acceleration = 5f;
     public static float currentSpeed;
-    //public GameObject goat;
     [SerializeField] private ChangeAnimal changeCode;
     float _baseSpeed = 4f;
     bool goatOn;
@@ -33,7 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
     [Header ("Jump")]
     [SerializeField] float forceJump;
-    //[SerializeField] float extraForceJump;
     [Range(0,1)][SerializeField] float jumpTime;
     private float jumpTimeCounter;
     private bool isJump;
@@ -51,11 +47,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask jumpMask, plantMask, levelMask;
 
     public Scene_Manager sceneManager;
-    
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
-    [SerializeField] private CinemachineVirtualCamera virtualCameraUp;
-    [SerializeField] private KeyCode lookDown;
-    [SerializeField] private KeyCode lookUp;
     
     private void Awake()
     {
@@ -92,23 +83,6 @@ public class PlayerMovement : MonoBehaviour
             isJumping = false;
         }
 
-        if (Input.GetKeyDown(lookDown))
-        {
-            virtualCamera.Priority = 3;
-        }
-        else if (Input.GetKeyUp(lookDown))
-        {
-            virtualCamera.Priority = 0;
-        }
-
-        if (Input.GetKeyDown(lookUp))
-        {
-            virtualCameraUp.Priority = 3;
-        }
-        else if (Input.GetKeyUp(lookUp))
-        {
-            virtualCameraUp.Priority = 0;
-        }
     }
 
 
@@ -154,7 +128,6 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             jumpTimeCounter = jumpTime;
             rb.AddForce(Vector3.up * forceJump, ForceMode.Impulse);
-            //rb.AddForce(Vector3.up * forceJump * Time.fixedDeltaTime);
             jumpParticles.Play();
             isJump = false;
 
@@ -166,7 +139,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 jumpTimeCounter -= Time.fixedDeltaTime;
                 rb.AddForce(Vector3.up * forceJump * Time.fixedDeltaTime, ForceMode.Impulse);
-                //rb.AddForce(Vector3.up * forceJump * Time.fixedDeltaTime);
             }
         }
 
