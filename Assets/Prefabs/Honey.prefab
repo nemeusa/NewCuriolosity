@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4523074037209280352}
   - component: {fileID: 350089753732525303}
   - component: {fileID: 752472360702121778}
+  - component: {fileID: 1319498288501864932}
   m_Layer: 0
   m_Name: Honey
   m_TagString: Untagged
@@ -149,3 +150,20 @@ MonoBehaviour:
   speed: 12
   slowDuration: 3
   slowAmount: 0.5
+  collisionAnim: {fileID: 1319498288501864932}
+--- !u!111 &1319498288501864932
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8309605663653848022}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8346eb1c0a8cf94489c1a919b87ebbd4, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8346eb1c0a8cf94489c1a919b87ebbd4, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

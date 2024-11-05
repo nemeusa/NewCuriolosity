@@ -7,6 +7,7 @@ public class Bullet2 : MonoBehaviour
 {
     [SerializeField] float speed;
 
+    [SerializeField] private Animation collisionAnim;
 
     private void Start()
     {
@@ -21,8 +22,24 @@ public class Bullet2 : MonoBehaviour
     {
         EnemyLife enemy = other.gameObject.GetComponent<EnemyLife>();
 
-        if (enemy != null) Destroy(other.gameObject);
+        collisionAnim.Play("Bullet2_Impact");
 
-        Destroy(gameObject);
+        if (enemy != null) 
+        {
+            PlayImpactEnemClip();
+            Destroy(other.gameObject);
+        }
+
+        Destroy(gameObject, collisionAnim["Bullet2_Impact"].length);
+    }
+
+    public void PlayImpactClip()
+    {
+        AudioManager.Instance.ImpactSource.Play();
+    }
+
+    public void PlayImpactEnemClip()
+    {
+        AudioManager.Instance.ImpactEnemSource.Play();
     }
 }

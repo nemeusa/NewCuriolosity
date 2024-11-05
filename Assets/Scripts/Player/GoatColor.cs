@@ -7,6 +7,8 @@ public class GoatColor : MonoBehaviour
     private Color colorOriginal;
     private Renderer objRenderer;
 
+    [SerializeField] private PlayerAudio _playerAudio;
+
     private void Start()
     {
         objRenderer = GetComponent<Renderer>();
@@ -21,6 +23,7 @@ public class GoatColor : MonoBehaviour
     {
         if (GoatController.Destruction)
         {
+            _playerAudio.PlaySkillClip();
             CambiarColorRojo();
         }
         else RestaurarColorOriginal();

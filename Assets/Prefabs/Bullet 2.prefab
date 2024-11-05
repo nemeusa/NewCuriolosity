@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5434804621134687311}
   - component: {fileID: 8614042269881901448}
   - component: {fileID: 673253248399387439}
+  - component: {fileID: 5998831904487688542}
   m_Layer: 0
   m_Name: Bullet 2
   m_TagString: Untagged
@@ -147,3 +148,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
+  collisionAnim: {fileID: 5998831904487688542}
+--- !u!111 &5998831904487688542
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2722269077554574065}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a0b47e27a7df8a54e8bef4817e962739, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a0b47e27a7df8a54e8bef4817e962739, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0

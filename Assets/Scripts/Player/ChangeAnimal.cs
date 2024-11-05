@@ -16,7 +16,7 @@ public class ChangeAnimal : MonoBehaviour
 
     public ParticleSystem changeParticle;
 
-    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private PlayerAudio _playerAudio;
 
     private Dictionary<Creatures, CreatureController> creaturesDictionary = new();
     public CreatureController currentCreature;
@@ -59,27 +59,28 @@ public class ChangeAnimal : MonoBehaviour
         if (Input.GetKeyDown(alienKey))
         {
             ChangeToCreature(Creatures.Alien);
+            _playerAudio.PlayAnimalClip(1);
             goatTrue = false;
             ratTrue = false;
         }
         if (Input.GetKeyDown(ratKey))
         {
             ChangeToCreature(Creatures.Rat);
-            _audioManager.RatSource.Play();
+            _playerAudio.PlayAnimalClip(2);
             goatTrue = false;
             ratTrue = true;
         }
         if (Input.GetKeyDown(turtleKey))
         {
             ChangeToCreature(Creatures.Turtle);
-            _audioManager.TurtleSource.Play();
+            _playerAudio.PlayAnimalClip(3);
             goatTrue = false;
             ratTrue = false;
         }
         if (Input.GetKeyDown(goatKey))
         {
             ChangeToCreature(Creatures.Goat);
-            _audioManager.GoatSource.Play();
+            _playerAudio.PlayAnimalClip(4);
             goatTrue = true;
             ratTrue = false;
         }
@@ -93,8 +94,7 @@ public class ChangeAnimal : MonoBehaviour
         }
 
         changeParticle.Play();
-        _audioManager.tSource.Play();
-
+        _playerAudio.PlayTransClip();
         currentCreature.OnDisable();
         currentCreature = creaturesDictionary[creatureToChange];
         currentCreature.OnChange();

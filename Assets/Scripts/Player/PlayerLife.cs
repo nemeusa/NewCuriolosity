@@ -16,17 +16,18 @@ public class PlayerLife : MonoBehaviour
     public bool IsParry;
     GameObject turtle;
 
-    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private PlayerAudio _playerAudio;
 
     public void TakeDamage(float damage)
     {
         _life -= damage;
 
-        _audioManager.DamageSource.Play();
+        _playerAudio.PlayLifeClip(_life);
 
         if (_life <= 0)
         {
-                Die();
+            _playerAudio.PlayLifeClip(_life);
+            Die();
         }
         Debug.Log("recibiste " + _life + " de daño");
 
@@ -39,7 +40,6 @@ public class PlayerLife : MonoBehaviour
 
         IEnumerator YouDied()
         {
-            _audioManager.DeathSource.Play();
             _transitionAnim.SetTrigger("End");
             yield return new WaitForSeconds(_transitionTime);
             Debug.Log("Moridiste");

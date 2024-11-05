@@ -11,7 +11,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] float fireRate;
     private float nextFireTime = 0f;
 
-    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private PlayerAudio _playerAudio;
 
     void Update()
     {
@@ -31,12 +31,12 @@ public class PlayerShoot : MonoBehaviour
     void Shoot()
     {
         Instantiate(Bullet, spawnBullet.position, spawnBullet.rotation);
-        _audioManager.BulletSource.Play();
+        _playerAudio.PlayShootClip();
     }
     
     void Shoot2()
     {
         Instantiate(Bullet2, spawnBullet2.position, spawnBullet2.rotation);
-        _audioManager.BulletSource.Play();
+        _playerAudio.PlayShootClip();
     }
 }
