@@ -86,6 +86,16 @@ public class TurtleController : CreatureController
     {
     }
 
+    public override void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            PlayerMovement.takeWall = true;
+        }
+
+        else PlayerMovement.takeWall = false;
+    }
+
     void color()
     {
         Renderer objRenderer = turtle.GetComponent<Renderer>();

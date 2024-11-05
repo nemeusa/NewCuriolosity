@@ -41,4 +41,6 @@ public abstract class CreatureController
     public abstract void OnTriggerEnter(Collider other);
 
     public abstract void OnCollisionEnter(Collision collision);
+
+    public abstract void OnCollisionStay(Collision other);
 }

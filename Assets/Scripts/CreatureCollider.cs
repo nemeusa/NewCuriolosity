@@ -12,4 +12,9 @@ public class CreatureCollider : MonoBehaviour
     {
         _changeAnimal.currentCreature.OnCollisionEnter(other);
     }
+
+    public void OnCollisionStay(Collision other)
+    {
+        _changeAnimal.currentCreature.OnCollisionStay(other);
+    }
 }

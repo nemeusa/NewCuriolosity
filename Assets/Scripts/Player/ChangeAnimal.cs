@@ -110,6 +110,11 @@ public class ChangeAnimal : MonoBehaviour
         currentCreature.OnCollisionEnter(collision);
     }
 
+    private void OnCollisionStay(Collision other)
+    {
+        currentCreature.OnCollisionStay(other);
+    }
+
     public void DestroyObject(GameObject gameObject)
     {
         Destroy(gameObject);

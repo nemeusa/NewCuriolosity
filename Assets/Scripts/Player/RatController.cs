@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RatController : CreatureController
 {
-    [SerializeField] float raycastMaxDistance = 1f;
+    [SerializeField] float raycastMaxDistance = 2f;
     [SerializeField] LayerMask raycastMask;
 
     public RatController(ChangeAnimal changeAnimal, GameObject mesh, float movSpeed) : base(changeAnimal, mesh, movSpeed)
@@ -36,5 +36,14 @@ public class RatController : CreatureController
     public override void OnCollisionEnter(Collision collision)
     {
     }
+    public override void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            PlayerMovement.takeWall = true;
+        }
 
+        else PlayerMovement.takeWall = false;
+
+    }
 }

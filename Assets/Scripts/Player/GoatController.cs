@@ -77,7 +77,7 @@ public class GoatController : CreatureController
         {
             Debug.LogError("Rigidbody no inicializado en GoatController");
         }
-        if (PlayerMovement.currentSpeed > _velocityForDestruction)
+        if (PlayerMovement.currentSpeed > _velocityForDestruction && Input.GetButton("Horizontal"))
         {
             Destruction = true;
         }
@@ -100,5 +100,16 @@ public class GoatController : CreatureController
             }
             Debug.Log("choquis");
         }
+    }
+
+    public override void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            PlayerMovement.takeWall = true;
+        }
+
+        else PlayerMovement.takeWall = false;
+
     }
 }

@@ -27,4 +27,15 @@ public class AlienController : CreatureController
     public override void OnUpdate()
     {
     }
+
+    public override void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            PlayerMovement.takeWall = true;
+        }
+
+        else PlayerMovement.takeWall = false;
+
+    }
 }

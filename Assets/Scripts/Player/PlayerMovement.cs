@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [Header ("move")]
     [SerializeField] float speedMov;
     public Rigidbody rb;
+    public Transform vista;
+
 
     [Header("goat")]
     [SerializeField] private float maxSpeed = 20f;
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     private bool takeFloor;
     private bool changeLevel;
     public bool plantZone;
+    public static bool takeWall;
     public ParticleSystem jumpParticles;
     [SerializeField] string scene;
     
@@ -44,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float gravityMultiplierUp;
 
     [SerializeField] float raycastMaxDistance;
-    [SerializeField] LayerMask jumpMask, plantMask, levelMask;
+    [SerializeField] LayerMask jumpMask, plantMask, levelMask, wallMask;
 
     public Scene_Manager sceneManager;
     
@@ -66,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        //takeWall = Physics.Raycast(vista.position, Vector3.forward, 0.8f, wallMask);
         plantZone = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, plantMask);
         changeLevel = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, levelMask);
 
@@ -90,26 +94,56 @@ public class PlayerMovement : MonoBehaviour
     {
         float Dir = Input.GetAxis("Horizontal");
 
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, Dir * speedMov);
+        if (!takeWall)
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, Dir * speedMov);
 
-        if (Dir > 0) { transform.rotation = Quaternion.Euler(0, 0, 0); }
-        else if (Dir < 0) { transform.rotation = Quaternion.Euler(0, 180, 0); }
+        else if (takeWall && Dir > 0 && !takeFloor && isJumping)
+        {
+            //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+            Debug.Log("ta tocando pared");
+        }
+
+        else if (takeWall && Dir < 0)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, Dir * speedMov);
+            Debug.Log("ta saliendo de la pared");
+        }
+
+        if (Dir > 0)
+        { 
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            //takeWall = Physics.Raycast(vista.position, Vector3.forward, 0.3f, wallMask);
+        }
+        else if (Dir < 0) 
+        { 
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            //takeWall = Physics.Raycast(vista.position, Vector3.back, 0.3f, wallMask);
+        }
 
     }
 
     private void MoveGoat()
     {
         float dir = Input.GetAxis("Horizontal");
+        //if (!takeWall)
+        //{
+            if (dir != 0)
+            {
+                currentSpeed += acceleration * Time.fixedDeltaTime;
+                currentSpeed = Mathf.Clamp(currentSpeed, _baseSpeed, maxSpeed);
+            }
+            else
+            {
+                currentSpeed = _baseSpeed;
+            }
+        //}
 
-        if (dir != 0)
+        if (takeWall && dir > 0 && !takeFloor && isJumping)
         {
-            currentSpeed += acceleration * Time.fixedDeltaTime;
-            currentSpeed = Mathf.Clamp(currentSpeed, _baseSpeed, maxSpeed);
+            //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+            Debug.Log("ta tocando pared");
         }
-        else
-        {
-            currentSpeed = _baseSpeed;
-        }
+
 
         if (dir > 0) { transform.rotation = Quaternion.Euler(0, 0, 0); }
         else if (dir < 0) { transform.rotation = Quaternion.Euler(0, 180, 0); }
@@ -215,6 +249,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * raycastMaxDistance);
+        //Gizmos.DrawLine(vista.position, vista.position + Vector3.forward * 0.3f);
     }
 }
