@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [Header ("move")]
     [SerializeField] float speedMov;
     public Rigidbody rb;
-    public Transform vista;
 
 
     [Header("goat")]
@@ -40,7 +41,11 @@ public class PlayerMovement : MonoBehaviour
     private bool changeLevel;
     public bool plantZone;
     public static bool takeWall;
+    public bool takeWallJump;
+    public bool takeWallJumpLeft;
     public ParticleSystem jumpParticles;
+    private bool wallJump;
+    public Transform wallJumpRaycast;
     [SerializeField] string scene;
     
     [SerializeField] float gravityMultiplier;
@@ -69,7 +74,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        //takeWall = Physics.Raycast(vista.position, Vector3.forward, 0.8f, wallMask);
+        takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.8f, wallMask);
+        takeWallJumpLeft = Physics.Raycast(wallJumpRaycast.position, Vector3.back, 0.8f, wallMask);
         plantZone = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, plantMask);
         changeLevel = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, levelMask);
 
@@ -94,29 +100,33 @@ public class PlayerMovement : MonoBehaviour
     {
         float Dir = Input.GetAxis("Horizontal");
 
-        if (!takeWall)
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, Dir * speedMov);
-
+        if(!takeWall || takeWall && Dir < 0 || takeWall && takeFloor){
+            if (!wallJump) rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, Dir * speedMov);
+            //else if (wallJump && takeWallJump) rb.velocity = new Vector3(0,0,0);
+        }
         else if (takeWall && Dir > 0 && !takeFloor && isJumping)
         {
             //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
             Debug.Log("ta tocando pared");
         }
-
-        else if (takeWall && Dir < 0)
-        {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, Dir * speedMov);
-            Debug.Log("ta saliendo de la pared");
-        }
+        
 
         if (Dir > 0)
         { 
+            //takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.8f, wallMask);
+            //takeWallJumpLeft = Physics.Raycast(wallJumpRaycast.position, Vector3.back, 0.8f, wallMask);
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            //takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.8f, wallMask);
+            //takeWallJumpLeft = false;
             //takeWall = Physics.Raycast(vista.position, Vector3.forward, 0.3f, wallMask);
         }
+
         else if (Dir < 0) 
-        { 
+        {
+            //takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.back, 0.8f, wallMask);
+            //takeWallJumpLeft = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.8f, wallMask);
             transform.rotation = Quaternion.Euler(0, 180, 0);
+            //takeWallJumpLeft = true;
             //takeWall = Physics.Raycast(vista.position, Vector3.back, 0.3f, wallMask);
         }
 
@@ -125,8 +135,8 @@ public class PlayerMovement : MonoBehaviour
     private void MoveGoat()
     {
         float dir = Input.GetAxis("Horizontal");
-        //if (!takeWall)
-        //{
+        if (!takeWall || takeWall && dir < 0)
+        {
             if (dir != 0)
             {
                 currentSpeed += acceleration * Time.fixedDeltaTime;
@@ -136,19 +146,24 @@ public class PlayerMovement : MonoBehaviour
             {
                 currentSpeed = _baseSpeed;
             }
-        //}
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, dir * currentSpeed);
+        }
 
-        if (takeWall && dir > 0 && !takeFloor && isJumping)
+        else if (takeWall && dir > 0 && !takeFloor && isJumping)
         {
-            //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
             Debug.Log("ta tocando pared");
         }
 
 
-        if (dir > 0) { transform.rotation = Quaternion.Euler(0, 0, 0); }
-        else if (dir < 0) { transform.rotation = Quaternion.Euler(0, 180, 0); }
+        if (dir > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (dir < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
 
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, dir * currentSpeed);
     }
 
     void Jump()
@@ -176,6 +191,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //codigo de gravedad
+
         else
         {
             isJumping = false;
@@ -186,11 +203,46 @@ public class PlayerMovement : MonoBehaviour
         
             rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplierUp / 2f), ForceMode.Acceleration);
         }
-        else if (rb.velocity.y < 0 && !takeFloor)
+        else if (rb.velocity.y < 0 && !takeFloor && !wallJump)
         {
-
             rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplier), ForceMode.Acceleration);
         }
+        else if (wallJump && takeWall && rb.velocity.y < 0 && !takeFloor)
+        {
+            rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplier / 2f), ForceMode.Acceleration);
+        }
+
+        //Codigo de wall jump
+
+        if (Input.GetButtonDown("Jump") && (takeWallJump || takeWallJumpLeft) && !takeFloor)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            wallJump = true;
+            Debug.Log("se activo wall jump");
+        }
+        else if (Input.GetButtonDown("Jump") && (!takeWallJump || !takeWallJumpLeft) || takeFloor)
+        {
+            wallJump = false;
+            Debug.Log("se desactivo wall jump");
+        }
+
+        if (Input.GetButtonDown("Jump") && wallJump && (takeWallJump || takeWallJumpLeft))
+        {
+            rb.AddForce(Vector3.up * forceJump, ForceMode.Impulse);
+            Debug.Log("haciendo wall jump");
+            if (takeWallJumpLeft)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 6);
+                Debug.Log("salto a la derecha");
+            }
+
+            else if (takeWallJump)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -6);
+                Debug.Log("salto a la izquierda");
+            }
+        }
+
     }
 
     #region rat
@@ -249,6 +301,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        //Gizmos.DrawLine(vista.position, vista.position + Vector3.forward * 0.3f);
+        Gizmos.DrawLine(wallJumpRaycast.position, wallJumpRaycast.position + Vector3.forward * 0.8f);
+        Gizmos.DrawLine(wallJumpRaycast.position, wallJumpRaycast.position + Vector3.back * 0.8f);
     }
 }

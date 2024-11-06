@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1231263507}
-  m_IndirectSpecularColor: {r: 0.13402483, g: 0.11743543, b: 0.22450724, a: 1}
+  m_IndirectSpecularColor: {r: 0.13453814, g: 0.117664315, b: 0.2241044, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3253,6 +3253,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7df62e5769dd8b744aba8ce2766e9abe, type: 3}
+--- !u!1 &1324168345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1324168346}
+  m_Layer: 0
+  m_Name: Wall jump
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1324168346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324168345}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2005718910}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1350543328
 GameObject:
   m_ObjectHideFlags: 0
@@ -10517,6 +10548,10 @@ PrefabInstance:
       propertyPath: _transitionAnim
       value: 
       objectReference: {fileID: 540270297}
+    - target: {fileID: 47809679085380819, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 4228da3c9b05ea94fbd3d4ced7069d5a, type: 2}
     - target: {fileID: 2654479678827824728, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10577,6 +10612,10 @@ PrefabInstance:
       propertyPath: virtualCameraUp
       value: 
       objectReference: {fileID: 1874924369}
+    - target: {fileID: 3125595952349144493, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
+      propertyPath: wallJumpRaycast
+      value: 
+      objectReference: {fileID: 1324168346}
     - target: {fileID: 3685463895942241668, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
       propertyPath: m_Name
       value: Player Full True
@@ -10611,6 +10650,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2654479678827824728, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1442353478}
+    - targetCorrespondingSourceObject: {fileID: 2654479678827824728, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1324168346}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a98173f6e4fe124d9a5937b3b6e5fd5, type: 3}
 --- !u!4 &2005718910 stripped

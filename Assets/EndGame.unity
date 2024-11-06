@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.118651666, g: 0.09935775, b: 0.19345033, a: 1}
+  m_IndirectSpecularColor: {r: 0.13453814, g: 0.117664315, b: 0.2241044, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5547,7 +5547,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2034198184}
         m_TargetAssemblyTypeName: SceneManager_MAINMENU, Assembly-CSharp
-        m_MethodName: Jugar
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

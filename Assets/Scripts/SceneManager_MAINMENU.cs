@@ -23,6 +23,10 @@ public class SceneManager_MAINMENU : MonoBehaviour
     {
         StartCoroutine(LoadLevelPlay());
     }
+    public void Retry()
+    {
+        StartCoroutine(LoadLevelRetry());
+    }
     public void Quit()
     {
         StartCoroutine(LoadLevelQuit());
@@ -62,6 +66,14 @@ public class SceneManager_MAINMENU : MonoBehaviour
         yield return new WaitForSeconds(_transitionTime);
         Debug.Log("Gameplay");
         SceneManager.LoadScene(4);
+        _transitionAnim.SetTrigger("Start");
+    }
+    IEnumerator LoadLevelRetry()
+    {
+        _transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(_transitionTime);
+        Debug.Log("Gameplay");
+        SceneManager.LoadScene(5);
         _transitionAnim.SetTrigger("Start");
     }
     IEnumerator LoadLevelQuit()
