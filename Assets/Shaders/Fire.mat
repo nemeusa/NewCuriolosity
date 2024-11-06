@@ -95,9 +95,9 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Disolve: -1.5
-    - _DisolveScale: 2
-    - _Distortion: 0.23
+    - _Disolve: -1
+    - _DisolveScale: 3
+    - _Distortion: 0.22
     - _DistortionScale: 10
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -117,7 +117,7 @@ Material:
     m_Colors:
     - _Color: {r: 0.5471698, g: 0.0708598, b: 0, a: 1}
     - _DisolveSpeed: {r: -0.3, g: -1, b: 0, a: 0}
-    - _DistortionSpeed: {r: 0, g: -1, b: 0, a: 0}
+    - _DistortionSpeed: {r: 0.2, g: -1.5, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &8309284673156067401
