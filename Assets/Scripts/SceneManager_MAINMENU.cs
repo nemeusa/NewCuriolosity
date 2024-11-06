@@ -7,6 +7,7 @@ public class SceneManager_MAINMENU : MonoBehaviour
 {
     [SerializeField] Animator _transitionAnim;
     [SerializeField] float _transitionTime;
+    [SerializeField] float _exitTime;
     public void MM()
     {
         StartCoroutine(LoadLevelMainMenu());
@@ -98,9 +99,8 @@ public class SceneManager_MAINMENU : MonoBehaviour
         _transitionAnim.SetTrigger("Start");
     }
     IEnumerator LoadLevelExit()
-    {
-        _transitionAnim.SetTrigger("End");
-        yield return new WaitForSeconds(_transitionTime);
+    {   
+        yield return new WaitForSeconds(_exitTime);
         Debug.Log("Quit");
         Application.Quit();
     }
