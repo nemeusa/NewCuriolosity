@@ -329,6 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6460fedd6b4333e4885928888cf22151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerAudio: {fileID: 0}
 --- !u!1 &3191444563960110228
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,7 +404,7 @@ MonoBehaviour:
   spawnBullet: {fileID: 5849820500220353013}
   spawnBullet2: {fileID: 5263712564621568102}
   fireRate: 3
-  _audioManager: {fileID: 0}
+  _playerAudio: {fileID: 0}
 --- !u!1 &3685463895942241668
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +475,10 @@ MonoBehaviour:
   forceJump: 9.3
   jumpTime: 0.7
   plantZone: 0
+  takeWallJump: 0
+  takeWallJumpLeft: 0
   jumpParticles: {fileID: 4899183758103632805}
+  wallJumpRaycast: {fileID: 0}
   scene: Movimiento
   gravityMultiplier: 2.7
   gravityMultiplierUp: 2.5
@@ -488,11 +492,10 @@ MonoBehaviour:
   levelMask:
     serializedVersion: 2
     m_Bits: 256
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 0
   sceneManager: {fileID: 0}
-  virtualCamera: {fileID: 0}
-  virtualCameraUp: {fileID: 0}
-  lookDown: 0
-  lookUp: 0
 --- !u!54 &3081988872784105694
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -537,7 +540,7 @@ MonoBehaviour:
   Turtle: {fileID: 6267656401005833211}
   Goat: {fileID: 5671876170052316757}
   changeParticle: {fileID: 2809553578307315766}
-  _audioManager: {fileID: 0}
+  _playerAudio: {fileID: 0}
   alienKey: 49
   ratKey: 50
   turtleKey: 51
@@ -565,7 +568,7 @@ MonoBehaviour:
   _healthBar: {fileID: 0}
   _life: 100
   IsParry: 0
-  _audioManager: {fileID: 3751623773241381106, guid: 6053954c398264a42b31ca689c92c951, type: 3}
+  _playerAudio: {fileID: 0}
 --- !u!1 &4072993269851577817
 GameObject:
   m_ObjectHideFlags: 0

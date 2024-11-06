@@ -1033,8 +1033,8 @@ GameObject:
   - component: {fileID: 5810262540367949820}
   - component: {fileID: 7760632865627636934}
   - component: {fileID: 7264657946402197940}
-  - component: {fileID: 4685163464952277875}
   - component: {fileID: 5100536293563391376}
+  - component: {fileID: 836295951641993569}
   m_Layer: 9
   m_Name: Meshi
   m_TagString: Untagged
@@ -1107,8 +1107,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4685163464952277875
-BoxCollider:
+--- !u!114 &5100536293563391376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2976752309204661821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6460fedd6b4333e4885928888cf22151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerAudio: {fileID: 425222482240623094}
+--- !u!136 &836295951641993569
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1125,22 +1138,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 463.1054, y: 555.33356, z: 974.4358}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5100536293563391376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2976752309204661821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6460fedd6b4333e4885928888cf22151, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerAudio: {fileID: 425222482240623094}
+  serializedVersion: 2
+  m_Radius: 262.5387
+  m_Height: 894.2474
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.4455156, z: 57.8817}
 --- !u!1 &3198264517574554979
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,7 +6348,7 @@ GameObject:
   - component: {fileID: 6676411845580841792}
   - component: {fileID: 1424015855851973926}
   - component: {fileID: 1557506727667243995}
-  - component: {fileID: 5189008293793804682}
+  - component: {fileID: 2091739979807572373}
   m_Layer: 9
   m_Name: Turtle
   m_TagString: Untagged
@@ -6421,8 +6423,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5189008293793804682
-BoxCollider:
+--- !u!136 &2091739979807572373
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6439,9 +6441,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 3.11319, z: 3.4715624}
-  m_Center: {x: 0, y: 1.0565954, z: 0.119188786}
+  serializedVersion: 2
+  m_Radius: 0.6883699
+  m_Height: 3.2128487
+  m_Direction: 2
+  m_Center: {x: 0.20212959, y: 0.8690095, z: 0.17757797}
 --- !u!1 &8245878319932592550
 GameObject:
   m_ObjectHideFlags: 0
