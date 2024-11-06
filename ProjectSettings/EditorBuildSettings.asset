@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/EndGame.unity
     guid: 62ad9002925132c4dbb3c26115c4fc03
+  - enabled: 1
+    path: Assets/SoundOptions.unity
+    guid: 704325b370ddd6545b54d8c99a841b52
   m_configObjects: {}
