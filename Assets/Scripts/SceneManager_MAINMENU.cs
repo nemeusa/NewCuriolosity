@@ -69,6 +69,7 @@ public class SceneManager_MAINMENU : MonoBehaviour
         _transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(_transitionTime);
         Debug.Log("Gameplay");
+        AudioManager.Instance.DisableMMsfx();
         SceneManager.LoadScene(4);
         _transitionAnim.SetTrigger("Start");
     }

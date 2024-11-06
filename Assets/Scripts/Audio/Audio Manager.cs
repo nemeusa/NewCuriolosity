@@ -29,11 +29,20 @@ public class AudioManager : MonoBehaviour
     [Header("<color=#fce357>Sources</color>")]
     [SerializeField] private AudioMixer _mixer;
 
+
     [SerializeField] private AudioSource _impactSource;
     public AudioSource ImpactSource { get { return _impactSource; } set { _impactSource = value; } }
+
     
     [SerializeField] private AudioSource _impactEnemSource;
     public AudioSource ImpactEnemSource { get { return _impactEnemSource; } set { _impactEnemSource = value; } }
+
+
+    [SerializeField] private AudioSource _mbgSource;
+    public AudioSource MBGSource { get { return _mbgSource; } set { _mbgSource = value; } }
+
+    [SerializeField] private AudioSource _fireSource;
+    public AudioSource FireSource { get { return _fireSource; } set { _fireSource = value; } }
 
 
     private AudioSource _mSource;
@@ -79,5 +88,14 @@ public class AudioManager : MonoBehaviour
         _mSource.clip = clip;
 
         _mSource.Play();
+    }
+
+    public void DisableMMsfx()
+    {
+        _mbgSource.Stop();
+        _mbgSource.enabled = false;
+
+        _fireSource.Stop();
+        _fireSource.enabled = false;
     }
 }
