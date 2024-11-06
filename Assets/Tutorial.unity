@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1231263507}
-  m_IndirectSpecularColor: {r: 0.13283944, g: 0.11510385, b: 0.22324237, a: 1}
+  m_IndirectSpecularColor: {r: 0.13412061, g: 0.11723214, b: 0.22403944, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2131,6 +2131,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 16632b78b777aae408d60ecb9773255d, type: 3}
       propertyPath: m_Name
       value: Piedrota
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 16632b78b777aae408d60ecb9773255d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5432,7 +5436,7 @@ Transform:
   m_GameObject: {fileID: 1606005367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: -2.7, z: 1.1}
+  m_LocalPosition: {x: -10, y: -13.4, z: 1.1}
   m_LocalScale: {x: 10.777457, y: 0.609865, z: 44.380943}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10650,6 +10654,10 @@ PrefabInstance:
     - target: {fileID: 7264610992923844657, guid: 529ee2c0858950441877d0c0cb10513c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525665900021140467, guid: 529ee2c0858950441877d0c0cb10513c, type: 3}
+      propertyPath: _life
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8525665900021140467, guid: 529ee2c0858950441877d0c0cb10513c, type: 3}
       propertyPath: _healthBar
