@@ -19,6 +19,10 @@ public class SceneManager_MAINMENU : MonoBehaviour
     {
         StartCoroutine(LoadLevelOptions());
     }
+    public void Sounds()
+    {
+        StartCoroutine(LoadLevelSounds());
+    }
     public void Jugar()
     {
         StartCoroutine(LoadLevelPlay());
@@ -70,6 +74,14 @@ public class SceneManager_MAINMENU : MonoBehaviour
         yield return new WaitForSeconds(_transitionTime);
         Debug.Log("Quit");
         SceneManager.LoadScene(3);
+        _transitionAnim.SetTrigger("Start");
+    }
+    IEnumerator LoadLevelSounds()
+    {
+        _transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(_transitionTime);
+        Debug.Log("Sonidos");
+        SceneManager.LoadScene(8);
         _transitionAnim.SetTrigger("Start");
     }
     IEnumerator LoadLevelExit()
