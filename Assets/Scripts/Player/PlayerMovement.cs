@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public bool takeWallJump;
     public bool takeWallJumpLeft;
     public ParticleSystem jumpParticles;
-    private bool wallJump;
+    [SerializeField]private bool wallJump;
     public Transform wallJumpRaycast;
     [SerializeField] string scene;
     
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!changeCode.goatTrue) Move();
+        if (!changeCode.goatTrue || !wallJump) Move();
         else MoveGoat();
         if (!changeCode.ratTrue)
             Jump();
@@ -74,8 +74,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.8f, wallMask);
-        takeWallJumpLeft = Physics.Raycast(wallJumpRaycast.position, Vector3.back, 0.8f, wallMask);
+        takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.7f, wallMask);
+        takeWallJumpLeft = Physics.Raycast(wallJumpRaycast.position, Vector3.back, 0.7f, wallMask);
         plantZone = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, plantMask);
         changeLevel = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, levelMask);
 
@@ -111,23 +111,14 @@ public class PlayerMovement : MonoBehaviour
         }
         
 
-        if (Dir > 0)
+        if (Dir > 0 && !wallJump || takeWallJumpLeft && wallJump)
         { 
-            //takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.8f, wallMask);
-            //takeWallJumpLeft = Physics.Raycast(wallJumpRaycast.position, Vector3.back, 0.8f, wallMask);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            //takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.8f, wallMask);
-            //takeWallJumpLeft = false;
-            //takeWall = Physics.Raycast(vista.position, Vector3.forward, 0.3f, wallMask);
         }
 
-        else if (Dir < 0) 
+        else if (Dir < 0 && !wallJump || takeWallJump && wallJump) 
         {
-            //takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.back, 0.8f, wallMask);
-            //takeWallJumpLeft = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.8f, wallMask);
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            //takeWallJumpLeft = true;
-            //takeWall = Physics.Raycast(vista.position, Vector3.back, 0.3f, wallMask);
         }
 
     }
@@ -154,12 +145,11 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("ta tocando pared");
         }
 
-
-        if (dir > 0)
+        if (dir > 0 && !takeWallJumpLeft && !wallJump || takeWallJumpLeft && wallJump)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (dir < 0)
+        else if (dir < 0 && !takeWallJump && !wallJump || takeWallJump && wallJump)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
@@ -214,19 +204,19 @@ public class PlayerMovement : MonoBehaviour
 
         //Codigo de wall jump
 
-        if (Input.GetButtonDown("Jump") && (takeWallJump || takeWallJumpLeft) && !takeFloor)
+        if (Input.GetButton("Jump") && (takeWallJump || takeWallJumpLeft) && !takeFloor)
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             wallJump = true;
             Debug.Log("se activo wall jump");
         }
-        else if (Input.GetButtonDown("Jump") && (!takeWallJump || !takeWallJumpLeft) || takeFloor)
+        else if (takeFloor)
         {
             wallJump = false;
-            Debug.Log("se desactivo wall jump");
+            //Debug.Log("se desactivo wall jump");
         }
 
-        if (Input.GetButtonDown("Jump") && wallJump && (takeWallJump || takeWallJumpLeft))
+        if (Input.GetButton("Jump") && wallJump && (takeWallJump || takeWallJumpLeft))
         {
             rb.AddForce(Vector3.up * forceJump, ForceMode.Impulse);
             Debug.Log("haciendo wall jump");
