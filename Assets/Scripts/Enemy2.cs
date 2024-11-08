@@ -8,6 +8,8 @@ public class Enemy2 : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float leftLimit;
     [SerializeField] float rightLimit;
+    [SerializeField] Transform mesh;
+    [SerializeField] bool esteNoGiraxd;
 
     [Header ("Shoot")]
     [SerializeField] GameObject bulletPrefab;
@@ -22,10 +24,12 @@ public class Enemy2 : MonoBehaviour
         if (movingRight)
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            if(!esteNoGiraxd) mesh.rotation = Quaternion.Euler(0, 180, 0);
         }
         else
         {
             transform.Translate(Vector3.back * speed * Time.deltaTime);
+            if(!esteNoGiraxd) mesh.rotation = Quaternion.Euler(0, 0, 0);
         }
 
         if (transform.position.z >= rightLimit)

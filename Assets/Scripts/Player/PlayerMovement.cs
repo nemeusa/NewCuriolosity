@@ -65,8 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!changeCode.goatTrue || !wallJump) Move();
-        else MoveGoat();
+        if (!changeCode.goatTrue && !wallJump) Move();
+        else if (changeCode.goatTrue) MoveGoat();
         if (!changeCode.ratTrue)
             Jump();
         else
@@ -92,7 +92,6 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
-
     }
 
 
@@ -224,12 +223,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 6);
                 Debug.Log("salto a la derecha");
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
             else if (takeWallJump)
             {
                 rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -6);
                 Debug.Log("salto a la izquierda");
+                transform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
 
@@ -258,7 +259,7 @@ public class PlayerMovement : MonoBehaviour
             isJump = true;
         }
 
-        if (Input.GetButton("Jump") && isJumping && puedePlanear && pulsacionesRestantes > 0 && rb.velocity.y <= 0)
+        if (Input.GetButton("Jump") && isJumping && puedePlanear && pulsacionesRestantes > 0 && rb.velocity.y <= 0 && !takeFloor)
         {
             StartCoroutine(Planear());
         }
