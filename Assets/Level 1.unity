@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13412061, g: 0.11723214, b: 0.22403944, a: 1}
+  m_IndirectSpecularColor: {r: 0.1345526, g: 0.11769969, b: 0.22460338, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5734,7 +5734,7 @@ GameObject:
   - component: {fileID: 65215855}
   - component: {fileID: 65215856}
   - component: {fileID: 65215857}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Arbol Destruible
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -12564,6 +12564,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f59891572d94c4196995af57eb475e, type: 3}
+--- !u!4 &590779647 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4663462963312097799, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
+  m_PrefabInstance: {fileID: 1430709097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &597342867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15673,7 +15678,7 @@ GameObject:
   - component: {fileID: 770909153}
   m_Layer: 6
   m_Name: pCube18 (11)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19129,6 +19134,8 @@ MonoBehaviour:
   speed: -0.15
   leftLimit: 10
   rightLimit: 10
+  mesh: {fileID: 995683326}
+  esteNoGiraxd: 1
   bulletPrefab: {fileID: 3708262633209291244, guid: b5a7f74e5a35fab4490cddaac79a07e0, type: 3}
   bulletSpawnPoint: {fileID: 782628376}
   fireRate: 1
@@ -20996,9 +21003,9 @@ GameObject:
   - component: {fileID: 1211188407}
   - component: {fileID: 1211188406}
   - component: {fileID: 1211188405}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Arbol Bloqueo Izq
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24374,6 +24381,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2286659067528983333, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
+      propertyPath: mesh
+      value: 
+      objectReference: {fileID: 590779647}
+    - target: {fileID: 2286659067528983333, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
       propertyPath: speed
       value: 0
       objectReference: {fileID: 0}
@@ -24389,6 +24400,10 @@ PrefabInstance:
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 3708262633209291244, guid: d9e87eaa12cfc634c8d8ba40df5a206a, type: 3}
+    - target: {fileID: 2286659067528983333, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
+      propertyPath: esteNoGiraxd
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3102703628737214575, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
       propertyPath: m_Name
       value: Bird
@@ -27321,6 +27336,8 @@ MonoBehaviour:
   speed: -0.15
   leftLimit: 10
   rightLimit: 10
+  mesh: {fileID: 1627876004}
+  esteNoGiraxd: 1
   bulletPrefab: {fileID: 3708262633209291244, guid: b5a7f74e5a35fab4490cddaac79a07e0, type: 3}
   bulletSpawnPoint: {fileID: 782628376}
   fireRate: 1
@@ -33490,6 +33507,8 @@ MonoBehaviour:
   speed: -0.15
   leftLimit: 10
   rightLimit: 10
+  mesh: {fileID: 2145453278}
+  esteNoGiraxd: 1
   bulletPrefab: {fileID: 3708262633209291244, guid: b5a7f74e5a35fab4490cddaac79a07e0, type: 3}
   bulletSpawnPoint: {fileID: 782628376}
   fireRate: 1
