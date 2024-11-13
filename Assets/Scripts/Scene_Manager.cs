@@ -24,10 +24,10 @@ public class Scene_Manager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        StartCoroutine(LoadnScene(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
-    IEnumerator LoadnScene(int levelIndex)
+    IEnumerator LoadScene(int levelIndex)
     {
         //Play animation
         _transitionAnim.SetTrigger(_startName);

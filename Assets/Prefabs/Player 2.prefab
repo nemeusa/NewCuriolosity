@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5764507572873680168}
   - component: {fileID: 4998998192491234030}
   - component: {fileID: 8463897449149203736}
+  - component: {fileID: 4348269938073507107}
   m_Layer: 9
   m_Name: Capsule
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.02, z: -15.1}
-  m_LocalScale: {x: 0.01978479, y: 0.007217329, z: 0.03392425}
+  m_LocalScale: {x: 0.006502281, y: 0.007217329, z: 0.03392425}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9056051390796976580}
@@ -101,10 +102,33 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 122.3926, y: 105.28247, z: 254.28429}
   m_Center: {x: 0, y: 5.5912666, z: 93.823586}
+--- !u!136 &4348269938073507107
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659583397052141286}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 80.4329
+  m_Height: 276.4327
+  m_Direction: 2
+  m_Center: {x: 0, y: -20.145962, z: 84.28884}
 --- !u!1 &1462786012550290984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMov: 7
   rb: {fileID: 0}
-  vista: {fileID: 0}
   maxSpeed: 20
   acceleration: 5
   changeCode: {fileID: 5346081891890723236}
@@ -1248,7 +1271,11 @@ MonoBehaviour:
   forceJump: 9
   jumpTime: 0.7
   plantZone: 0
+  takeWallJump: 0
+  takeWallJumpLeft: 0
   jumpParticles: {fileID: 6050656331517474690}
+  wallJump: 0
+  wallJumpRaycast: {fileID: 0}
   scene: Movimiento
   gravityMultiplier: 2
   gravityMultiplierUp: 2.5
@@ -6498,7 +6525,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -6539,7 +6566,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1.9277182, z: 0.8223877}
   m_Center: {x: 0, y: 0.035271168, z: 0.014122009}
