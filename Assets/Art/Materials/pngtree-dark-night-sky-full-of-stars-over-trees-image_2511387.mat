@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: pngtree-dark-night-sky-full-of-stars-over-trees-image_2511387
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: f3a779b469bccf141901e7f119e14d1f, type: 2}
+  m_Parent: {fileID: 2100000, guid: 3bbd36d1d267e1844a29010f5b45b611, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
