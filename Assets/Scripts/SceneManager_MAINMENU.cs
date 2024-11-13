@@ -11,13 +11,31 @@ public class SceneManager_MAINMENU : MonoBehaviour
 
     [SerializeField] private GameObject _pauseMenu;
     [SerializeField] private GameObject _pauseOptions;
+    [SerializeField] private bool _justOptions;
+    [SerializeField] private bool _justPause;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !_justOptions && !_justPause)
         {
             Time.timeScale = 0f;
             _pauseMenu.SetActive(true);
+            _justPause = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && _justOptions)
+        {
+            Time.timeScale = 0f;
+            _pauseOptions.SetActive(false);
+            _pauseMenu.SetActive(true);
+            _justOptions = false;
+            _justPause = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && !_justOptions && _justPause)
+        {
+            Debug.Log("jiadfi1");
+            Time.timeScale = 1f;
+            _pauseMenu.SetActive(false);
+            _justPause = false;
         }
     }
     public void Resume()
@@ -34,11 +52,13 @@ public class SceneManager_MAINMENU : MonoBehaviour
     public void OptionsPause()
     {
         _pauseOptions.SetActive(true);
+        _justOptions = true;
         _pauseMenu.SetActive(false);
     }
     public void QuitOptionsPause()
     {
         _pauseOptions.SetActive(false);
+        _justOptions = false;
         _pauseMenu.SetActive(true);
     }
 

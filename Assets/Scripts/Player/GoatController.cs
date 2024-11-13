@@ -17,7 +17,6 @@ public class GoatController : CreatureController
 
     public override void OnFixedUpdate()
     {
-        //Move();
     }
 
     public override void OnStart()
@@ -50,22 +49,6 @@ public class GoatController : CreatureController
     {
     }
 
-    private void Move()
-    {
-        float dir = Input.GetAxis("Horizontal");
-
-        if (dir != 0)
-        {
-            currentSpeed += acceleration * Time.fixedDeltaTime;
-            currentSpeed = Mathf.Clamp(currentSpeed, _movSpeed, maxSpeed);
-        }
-        else
-        {
-            currentSpeed = _movSpeed;
-        }
-
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, dir * currentSpeed);
-    }
 
     public override void OnUpdate()
     {

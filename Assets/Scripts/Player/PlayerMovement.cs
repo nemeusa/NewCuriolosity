@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         if (!changeCode.goatTrue && !wallJump) Move();
-        else if (changeCode.goatTrue) MoveGoat();
+        else if (changeCode.goatTrue && !takeWall && !changeCode.ratTrue) MoveGoat();
         if (!changeCode.ratTrue)
             Jump();
         else
@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
         float dir = Input.GetAxis("Horizontal");
         if (!takeWall || takeWall && dir < 0)
         {
-            if (dir != 0)
+            if (dir != 0 && !changeCode.ratTrue)
             {
                 currentSpeed += acceleration * Time.fixedDeltaTime;
                 currentSpeed = Mathf.Clamp(currentSpeed, _baseSpeed, maxSpeed);

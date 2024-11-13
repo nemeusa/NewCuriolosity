@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1231263507}
-  m_IndirectSpecularColor: {r: 0.13301578, g: 0.11609671, b: 0.2241002, a: 1}
+  m_IndirectSpecularColor: {r: 0.13401449, g: 0.1172482, b: 0.22426125, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4297,6 +4297,7 @@ MonoBehaviour:
   _exitTime: 0
   _pauseMenu: {fileID: 1471005496}
   _pauseOptions: {fileID: 2070971084}
+  _justOptions: 0
 --- !u!95 &956042283
 Animator:
   serializedVersion: 5
@@ -15612,8 +15613,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.919612, y: 32.38863, z: 1}
+  m_Center: {x: -0.71589035, y: 0.16586156, z: 0}
 --- !u!23 &2052799684
 MeshRenderer:
   m_ObjectHideFlags: 0

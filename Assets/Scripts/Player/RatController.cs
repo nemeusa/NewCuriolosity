@@ -6,6 +6,7 @@ public class RatController : CreatureController
 {
     [SerializeField] float raycastMaxDistance = 2f;
     [SerializeField] LayerMask raycastMask;
+    //lic static bool dontChanges;
 
     public RatController(ChangeAnimal changeAnimal, GameObject mesh, float movSpeed) : base(changeAnimal, mesh, movSpeed)
     {
@@ -41,6 +42,7 @@ public class RatController : CreatureController
         if (other.gameObject.CompareTag("Wall"))
         {
             PlayerMovement.takeWall = true;
+            //ntChanges = true;
         }
 
         else PlayerMovement.takeWall = false;

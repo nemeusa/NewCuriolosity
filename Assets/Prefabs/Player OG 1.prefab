@@ -1254,7 +1254,7 @@ MonoBehaviour:
   wallJump: 0
   wallJumpRaycast: {fileID: 6283190922883148634}
   scene: Movimiento
-  gravityMultiplier: 2.7
+  gravityMultiplier: 2
   gravityMultiplierUp: 2.5
   raycastMaxDistance: 1.0001
   jumpMask:
