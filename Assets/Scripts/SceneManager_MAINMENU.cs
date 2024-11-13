@@ -8,6 +8,42 @@ public class SceneManager_MAINMENU : MonoBehaviour
     [SerializeField] Animator _transitionAnim;
     [SerializeField] float _transitionTime;
     [SerializeField] float _exitTime;
+
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _pauseOptions;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0f;
+            _pauseMenu.SetActive(true);
+        }
+    }
+    public void Resume()
+    {
+        Debug.Log("ToconBotadoxD");
+        Time.timeScale = 1f;
+        _pauseMenu.SetActive(false);
+    }
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void OptionsPause()
+    {
+        _pauseOptions.SetActive(true);
+        _pauseMenu.SetActive(false);
+    }
+    public void QuitOptionsPause()
+    {
+        _pauseOptions.SetActive(false);
+        _pauseMenu.SetActive(true);
+    }
+
+
+
     public void MM()
     {
         StartCoroutine(LoadLevelMainMenu());
