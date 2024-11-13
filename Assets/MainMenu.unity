@@ -6552,7 +6552,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3741382792275265217, guid: 6053954c398264a42b31ca689c92c951, type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3741382792275265217, guid: 6053954c398264a42b31ca689c92c951, type: 3}
       propertyPath: m_PlayOnAwake
@@ -8599,7 +8599,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1868290259}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TransManager, Assembly-CSharp
         m_MethodName: UpdateCamera
         m_Mode: 2
@@ -9037,7 +9037,6 @@ GameObject:
   - component: {fileID: 1868290253}
   - component: {fileID: 1868290258}
   - component: {fileID: 1868290257}
-  - component: {fileID: 1868290259}
   - component: {fileID: 1868290260}
   m_Layer: 5
   m_Name: Canvas
@@ -9165,19 +9164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionAnim: {fileID: 1868290257}
   _transitionTime: 0.8
---- !u!114 &1868290259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868290252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8ff734336de8546bdfba9bcc1e5453, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentCamera: {fileID: 229562574}
+  _exitTime: 0
 --- !u!82 &1868290260
 AudioSource:
   m_ObjectHideFlags: 0

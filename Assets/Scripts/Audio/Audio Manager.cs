@@ -68,13 +68,13 @@ public class AudioManager : MonoBehaviour
 
     public void SetMusicVolume(float value)
     {
-        _masterVol = value;
+        _musicVol = value;
         _mixer.SetFloat("Music", Mathf.Log10(value) * 20.0f);
     }
 
     public void SetSFXVolume(float value)
     {
-        _masterVol = value;
+        _sfxVol = value;
         _mixer.SetFloat("SFX", Mathf.Log10(value) * 20.0f);
     }
     #endregion

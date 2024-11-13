@@ -10,7 +10,7 @@ public class SliderAction : MonoBehaviour
     [Range(0.0001f, 1.0f)][SerializeField] private float _musicVolume = 0.1f;
     [Range(0.0001f, 1.0f)][SerializeField] private float _sfxVolume = 1.0f;
 
-    [Header("color=yellow>Sliders</color>")]
+    [Header("<color=yellow>Sliders</color>")]
     [SerializeField] private Slider _masterSlider;
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _sfxSlider;
