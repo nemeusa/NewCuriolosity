@@ -48,6 +48,12 @@ public class SceneManager_MAINMENU : MonoBehaviour
         Debug.Log("Menu principal");
         SceneManager.LoadScene(0);
         _transitionAnim.SetTrigger("Start");
+        
+        PlayerPrefs.DeleteKey("LastCheckpointID");
+        PlayerPrefs.DeleteKey("RespawnX");
+        PlayerPrefs.DeleteKey("RespawnY");
+        PlayerPrefs.DeleteKey("RespawnZ");
+
     }
     IEnumerator LoadLevelOptions()
     {

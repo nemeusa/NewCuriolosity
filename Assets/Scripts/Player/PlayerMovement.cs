@@ -56,10 +56,12 @@ public class PlayerMovement : MonoBehaviour
 
     public Scene_Manager sceneManager;
     
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         pulsacionesRestantes = maxPulsaciones;
+        
     }
 
 
