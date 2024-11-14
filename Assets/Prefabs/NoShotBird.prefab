@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe5d874ea7172d469f2fd3c34a74c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  destroyTime: 3
+  speed: 60
+  destroyTime: 5
   bulletPrefab: {fileID: 3708262633209291244, guid: b5a7f74e5a35fab4490cddaac79a07e0, type: 3}
   bulletSpawnPoint: {fileID: 5659378622776207678}
   fireRate: 2

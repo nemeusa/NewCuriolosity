@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1231263507}
-  m_IndirectSpecularColor: {r: 0.13401449, g: 0.1172482, b: 0.22426125, a: 1}
+  m_IndirectSpecularColor: {r: 0.13409218, g: 0.11692176, b: 0.22431257, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3855,7 +3855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1630740642159405372, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.62
+      value: 15.26
       objectReference: {fileID: 0}
     - target: {fileID: 1630740642159405372, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3940,6 +3940,10 @@ PrefabInstance:
     - target: {fileID: 8924306980139104617, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
       propertyPath: m_Center.z
       value: 1.8094997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924306980139104617, guid: 81a18c748dcb1b645b925837e3195781, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4298,6 +4302,7 @@ MonoBehaviour:
   _pauseMenu: {fileID: 1471005496}
   _pauseOptions: {fileID: 2070971084}
   _justOptions: 0
+  _justPause: 0
 --- !u!95 &956042283
 Animator:
   serializedVersion: 5
