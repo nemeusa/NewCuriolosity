@@ -135,6 +135,12 @@ public class SceneManager_MAINMENU : MonoBehaviour
         AudioManager.Instance.DisableMMsfx();
         SceneManager.LoadScene(4);
         _transitionAnim.SetTrigger("Start");
+        
+        
+        PlayerPrefs.DeleteKey("LastCheckpointID");
+        PlayerPrefs.DeleteKey("RespawnX");
+        PlayerPrefs.DeleteKey("RespawnY");
+        PlayerPrefs.DeleteKey("RespawnZ");
     }
     IEnumerator LoadLevelRetry()
     {

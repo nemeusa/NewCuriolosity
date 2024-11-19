@@ -7,6 +7,9 @@ public class TurtleController : CreatureController
     public float parryWindow = 1f;
     public static bool isParrying = false;
     [SerializeField] private GameObject turtle;
+    
+    [SerializeField] float raycastMaxDistance = 2f;
+    [SerializeField] LayerMask raycastMask;
     public TurtleController(ChangeAnimal changeAnimal, GameObject mesh, float movSpeed) : base(changeAnimal, mesh, movSpeed)
     {
         turtle = mesh;
@@ -37,7 +40,10 @@ public class TurtleController : CreatureController
         isParrying = false;
     }
 
-
+    public override bool CanChange()
+    {
+        return !Physics.Raycast(_mesh.transform.position, _mesh.transform.up, raycastMaxDistance, _changeAnimal.layerMask);
+    }
     void ReflectProjectile(BulletEnemy bullet)
     {
         float Dir = Input.GetAxis("Horizontal");
