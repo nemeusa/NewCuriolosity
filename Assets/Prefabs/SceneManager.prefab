@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionAnim: {fileID: 0}
   _startName: Start
-  _transitionTime: 1
+  _transitionTime: 1.5
 --- !u!1001 &2702843694125693859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2759140253906253079, guid: 85900e9fa85ef074aa59377dbf709128, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8095737537841314583, guid: 85900e9fa85ef074aa59377dbf709128, type: 3}
       propertyPath: m_Pivot.x
@@ -170,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2399048304835563468, guid: a3965b15e0a17b6449cc7cb545207bc8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3988617216878996894, guid: a3965b15e0a17b6449cc7cb545207bc8, type: 3}
       propertyPath: m_Pivot.x
@@ -389,6 +389,10 @@ PrefabInstance:
     - target: {fileID: 896440310205049718, guid: abdab0e3935bfd046ae040a34ca1f2df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399545316846007535, guid: abdab0e3935bfd046ae040a34ca1f2df, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.40790433
       objectReference: {fileID: 0}
     - target: {fileID: 1900941493346142500, guid: abdab0e3935bfd046ae040a34ca1f2df, type: 3}
       propertyPath: m_Name
