@@ -159,7 +159,7 @@ public class SceneManager_MAINMENU : MonoBehaviour
         _transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(_transitionTime);
         Debug.Log("Sonidos");
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(9);
         _transitionAnim.SetTrigger("Start");
     }
     IEnumerator LoadLevelExit()
