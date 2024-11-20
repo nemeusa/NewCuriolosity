@@ -5833,6 +5833,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1195204749}
     - target: {fileID: 2619884805805254532, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
+      propertyPath: sceneManager
+      value: 
+      objectReference: {fileID: 1499348152}
+    - target: {fileID: 2619884805805254532, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: maxPulsaciones
       value: 50
       objectReference: {fileID: 0}
@@ -28926,6 +28930,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71f59891572d94c4196995af57eb475e, type: 3}
+--- !u!114 &1499348152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6465995132034871117, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
+  m_PrefabInstance: {fileID: 1996668912481815710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3273c738797e591418ee8ccba5a291f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1500789033
 GameObject:
   m_ObjectHideFlags: 0
@@ -39886,7 +39901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3804344434902453473, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4157537164221227900, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39928,6 +39943,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4918962297707650383, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6465995132034871117, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
       propertyPath: _transitionAnim
       value: 
@@ -39940,7 +39959,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8876558577973564472, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
+    - {fileID: 5054084098477842325, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
+    - {fileID: 5974600814084730470, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
