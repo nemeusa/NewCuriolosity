@@ -40,7 +40,6 @@ public class SceneManager_MAINMENU : MonoBehaviour
     }
     public void Resume()
     {
-        Debug.Log("ToconBotadoxD");
         Time.timeScale = 1f;
         _pauseMenu.SetActive(false);
     }
@@ -61,9 +60,6 @@ public class SceneManager_MAINMENU : MonoBehaviour
         _justOptions = false;
         _pauseMenu.SetActive(true);
     }
-
-
-
     public void MM()
     {
         StartCoroutine(LoadLevelMainMenu());
