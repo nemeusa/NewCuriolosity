@@ -16350,6 +16350,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: scalingMode
       value: 1
       objectReference: {fileID: 0}
@@ -16423,7 +16427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: ShapeModule.m_Scale.z
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: EmissionModule.enabled
@@ -16495,7 +16499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: NoiseModule.sizeAmount.scalar
@@ -16523,7 +16527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: LightsModule.randomDistribution
@@ -16559,7 +16563,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: LightsModule.intensityCurve.scalar
@@ -16591,7 +16595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: TrailModule.colorOverTrail.maxColor.a
