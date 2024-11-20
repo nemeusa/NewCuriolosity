@@ -5824,6 +5824,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.012321
       objectReference: {fileID: 0}
+    - target: {fileID: 918859695577435547, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
+      propertyPath: _life
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 918859695577435547, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 1195204749}
     - target: {fileID: 2619884805805254532, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: maxPulsaciones
       value: 50
@@ -5911,7 +5919,7 @@ PrefabInstance:
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: LightsModule.light
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1435599475}
     - target: {fileID: 6276675704396933463, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
       propertyPath: LightsModule.range
       value: 1
@@ -9317,7 +9325,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316632650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -190.5}
+  m_LocalPosition: {x: 0, y: 0, z: -188.5}
   m_LocalScale: {x: 0.5547134, y: 0.3231782, z: 0.08894499}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12362,7 +12370,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498964398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -190.5}
+  m_LocalPosition: {x: 0, y: 0, z: -188.5}
   m_LocalScale: {x: 0.5547134, y: 0.27704948, z: 0.08894499}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23429,7 +23437,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195204747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -190.5}
+  m_LocalPosition: {x: 0, y: 0, z: -188.5}
   m_LocalScale: {x: 0.15756126, y: 0.036816657, z: 0.08380096}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39878,7 +39886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3804344434902453473, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4157537164221227900, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45764,6 +45772,7 @@ SceneRoots:
   - {fileID: 1285416938}
   - {fileID: 1254963904}
   - {fileID: 62443758}
+  - {fileID: 963194228}
   - {fileID: 2095132691}
   - {fileID: 1872907862}
   - {fileID: 1435599476}
@@ -45775,7 +45784,6 @@ SceneRoots:
   - {fileID: 371335369}
   - {fileID: 46929309}
   - {fileID: 1332910831}
-  - {fileID: 963194228}
   - {fileID: 1635760156}
   - {fileID: 8488291237172795528}
   - {fileID: 9129605641747404376}
