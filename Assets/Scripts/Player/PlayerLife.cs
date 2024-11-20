@@ -43,7 +43,7 @@ public class PlayerLife : MonoBehaviour
             _transitionAnim.SetTrigger("End");
             yield return new WaitForSeconds(_transitionTime);
             Debug.Log("Moridiste");
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(8);  
             _transitionAnim.SetTrigger("Start");
         }
     }

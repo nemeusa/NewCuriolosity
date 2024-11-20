@@ -105,7 +105,6 @@ public class SceneManager_MAINMENU : MonoBehaviour
         PlayerPrefs.DeleteKey("RespawnX");
         PlayerPrefs.DeleteKey("RespawnY");
         PlayerPrefs.DeleteKey("RespawnZ");
-
     }
     IEnumerator LoadLevelOptions()
     {

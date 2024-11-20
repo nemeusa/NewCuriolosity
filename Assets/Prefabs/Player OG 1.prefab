@@ -862,7 +862,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.105, z: 1.121}
-  m_LocalScale: {x: 0.24869, y: 0.24869, z: 0.07518396}
+  m_LocalScale: {x: 0.16, y: 0.24869, z: 0.07518396}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8502003767916389320}
@@ -942,6 +942,7 @@ GameObject:
   - component: {fileID: 8856669391394301589}
   - component: {fileID: 7846773292503954911}
   - component: {fileID: 7113677168103296294}
+  - component: {fileID: 7337612553736133061}
   m_Layer: 9
   m_Name: Capsule
   m_TagString: Untagged
@@ -1031,10 +1032,33 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 122.3926, y: 105.28247, z: 254.28429}
   m_Center: {x: 0, y: 5.5912666, z: 93.823586}
+--- !u!136 &7337612553736133061
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4894807095162412364}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 26.026085
+  m_Height: 276.28214
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.43142432, z: 83.490685}
 --- !u!1 &5846134162645206138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,10 +1266,10 @@ MonoBehaviour:
   changeCode: {fileID: 5183990212210135381}
   movSpeed: 5
   jumpForce: 1
-  fallSpeed: 0
+  fallSpeed: 1
   helicopterTime: 1
   cooldownHelicopter: 0
-  maxPulsaciones: 1000
+  maxPulsaciones: 300
   forceJump: 9.3
   jumpTime: 0.7
   plantZone: 0
