@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13453814, g: 0.117664315, b: 0.2241044, a: 1}
+  m_IndirectSpecularColor: {r: 0.13409218, g: 0.11692176, b: 0.22431257, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4015,7 +4015,7 @@ Transform:
   m_GameObject: {fileID: 910048750}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.9961947, z: -0.08715578, w: 0}
-  m_LocalPosition: {x: -5.2, y: 0.44, z: 199.47}
+  m_LocalPosition: {x: 2.5900002, y: 0.44, z: 199.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8465,7 +8465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e8ff734336de8546bdfba9bcc1e5453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentCamera: {fileID: 0}
 --- !u!95 &2034198183
 Animator:
   serializedVersion: 5
@@ -8501,6 +8500,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionAnim: {fileID: 2034198183}
   _transitionTime: 0.8
+  _exitTime: 0
+  _pauseMenu: {fileID: 0}
+  _pauseOptions: {fileID: 0}
+  _justOptions: 0
+  _justPause: 0
 --- !u!114 &2034198185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8584,7 +8588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -8.5, y: 8.7}
+  m_AnchoredPosition: {x: -0.71, y: 8.7}
   m_SizeDelta: {x: 1919.9999, y: 1079.9999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2035314758
@@ -9684,10 +9688,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7726d0efa8d10cc4992ae9ca39abcfba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mSource: {fileID: 4052441185502822911}
-  _fSource: {fileID: 2505862982440912887}
-  background: {fileID: 8300000, guid: 660790bb19a97eb4581a05d90c81f369, type: 3}
-  fire: {fileID: 8300000, guid: 054205af35efcb942be9610445479a7c, type: 3}
 --- !u!82 &4052441185502822911
 AudioSource:
   m_ObjectHideFlags: 0
