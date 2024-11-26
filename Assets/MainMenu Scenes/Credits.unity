@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13449997, g: 0.118604474, b: 0.22524819, a: 1}
+  m_IndirectSpecularColor: {r: 0.13409218, g: 0.11692176, b: 0.22431257, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -689,7 +689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344884763}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.010299545, y: 0.98969615, z: 0.10244628, w: 0.09950014}
+  m_LocalRotation: {x: -0.010299543, y: 0.98969615, z: 0.10244628, w: 0.099500135}
   m_LocalPosition: {x: 4.048537, y: 8.347147, z: 0.0491333}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1383,7 +1383,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1924,7 +1924,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.46, y: 1.69}
+  m_AnchoredPosition: {x: 0.46, y: 0.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &877657082
@@ -1947,19 +1947,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This game was made by
-
-
-    Padrevechi Mateo
-
-    Saligari Victoria
-
-    Ruiz
-    Andrew
-
-    Ventura Gonzalo
-
-    Vivas Federico'
+  m_text: "This game was\n made by\n\nRuiz Andrew\nVivas Federico\nSaligari Victoria\nVentura
+    Gonzalo\nPadrevechi Mateo\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1992,7 +1981,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3017,7 +3006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505860960}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.010299545, y: 0.98969615, z: 0.10244628, w: 0.09950014}
+  m_LocalRotation: {x: -0.010299543, y: 0.98969615, z: 0.10244628, w: 0.099500135}
   m_LocalPosition: {x: 10.42, y: -2.56, z: -19.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3679,6 +3668,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionAnim: {fileID: 1868290258}
   _transitionTime: 0.8
+  _exitTime: 0
+  _pauseMenu: {fileID: 0}
+  _pauseOptions: {fileID: 0}
+  _justOptions: 0
+  _justPause: 0
 --- !u!95 &1868290258
 Animator:
   serializedVersion: 5
