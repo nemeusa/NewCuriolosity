@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1231263507}
-  m_IndirectSpecularColor: {r: 0.13267207, g: 0.11503663, b: 0.22368968, a: 1}
+  m_IndirectSpecularColor: {r: 0.13449997, g: 0.118604474, b: 0.22524819, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4142,6 +4142,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 844464302110856079, guid: 4b35255adc20be04e847797745384df7, type: 3}
+      propertyPath: _bMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: f114c16fbd97f5042a28e3a51cad6d5e, type: 3}
     - target: {fileID: 1349282051207113240, guid: 4b35255adc20be04e847797745384df7, type: 3}
       propertyPath: m_LocalScale.x
       value: 10.777457
