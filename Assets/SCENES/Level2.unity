@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13342226, g: 0.11635367, b: 0.22439367, a: 1}
+  m_IndirectSpecularColor: {r: 0.13402483, g: 0.11743543, b: 0.22450724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2705,9 +2705,9 @@ MonoBehaviour:
   _masterVolume: 1
   _musicVolume: 0.1
   _sfxVolume: 1
-  _masterSlider: {fileID: 0}
-  _musicSlider: {fileID: 0}
-  _sfxSlider: {fileID: 0}
+  _masterSlider: {fileID: 710602059}
+  _musicSlider: {fileID: 1060248343}
+  _sfxSlider: {fileID: 34449986}
 --- !u!4 &685354666
 Transform:
   m_ObjectHideFlags: 0
@@ -6628,7 +6628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 392650c019985fa4eb58543daae7d576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 10
 --- !u!1 &1862156213
 GameObject:
   m_ObjectHideFlags: 0
