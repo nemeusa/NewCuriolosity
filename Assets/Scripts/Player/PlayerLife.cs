@@ -29,7 +29,7 @@ public class PlayerLife : MonoBehaviour
             _playerAudio.PlayLifeClip(_life);
             Die();
         }
-        Debug.Log("recibiste " + _life + " de daño");
+        Debug.Log("tienes " + _life + " de vida");
 
         _healthBar.fillAmount = _life / 100f;
 

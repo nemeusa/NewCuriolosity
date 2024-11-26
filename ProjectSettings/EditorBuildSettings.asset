@@ -6,33 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainMenu Scenes/MainMenu.unity
+    path: Assets/SCENES/MainMenu Scenes/MainMenu.unity
     guid: 79d3bea6aa559694a8c55f325d7b4bae
   - enabled: 1
-    path: Assets/MainMenu Scenes/Options.unity
+    path: Assets/SCENES/MainMenu Scenes/Options.unity
     guid: 72c0b5409f0390a4b8360245a5d7cfb6
   - enabled: 1
-    path: Assets/MainMenu Scenes/Credits.unity
+    path: Assets/SCENES/MainMenu Scenes/Credits.unity
     guid: b5719b62f77da6b45b8bf7cbf0d930b4
   - enabled: 1
-    path: Assets/MainMenu Scenes/Quit.unity
+    path: Assets/SCENES/MainMenu Scenes/Quit.unity
     guid: 518875fba9547e14e92df6e76d3266f5
   - enabled: 1
-    path: Assets/Tutorial.unity
+    path: Assets/SCENES/Tutorial.unity
     guid: 757a39e34b105c644be5e9441c0bf941
   - enabled: 1
-    path: Assets/Level 1.unity
+    path: Assets/SCENES/Level 1.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Level2.unity
+    path: Assets/SCENES/Level2.unity
     guid: 7d1c71b12164ade41adace94f63a652d
   - enabled: 1
-    path: Assets/WinScene.unity
+    path: Assets/SCENES/WinScene.unity
     guid: 3b63d4154013f8f479eb39dfa4e54e6f
   - enabled: 1
-    path: Assets/EndGame.unity
+    path: Assets/SCENES/EndGame.unity
     guid: 62ad9002925132c4dbb3c26115c4fc03
   - enabled: 1
-    path: Assets/MainMenu Scenes/SoundOptions.unity
+    path: Assets/SCENES/MainMenu Scenes/SoundOptions.unity
     guid: 704325b370ddd6545b54d8c99a841b52
   m_configObjects: {}
