@@ -56,28 +56,28 @@ public class ChangeAnimal : MonoBehaviour
 
     private void ChangePlayer()
     {
-        if (Input.GetKeyDown(alienKey))
+        if (Input.GetKeyDown(alienKey) && currentCreature.CanChange())
         {
             ChangeToCreature(Creatures.Alien);
             _playerAudio.PlayAnimalClip(1);
             goatTrue = false;
             ratTrue = false;
         }
-        if (Input.GetKeyDown(ratKey))
+        if (Input.GetKeyDown(ratKey) && currentCreature.CanChange())
         {
             ChangeToCreature(Creatures.Rat);
             _playerAudio.PlayAnimalClip(2);
             goatTrue = false;
             ratTrue = true;
         }
-        if (Input.GetKeyDown(turtleKey))
+        if (Input.GetKeyDown(turtleKey) && currentCreature.CanChange())
         {
             ChangeToCreature(Creatures.Turtle);
             _playerAudio.PlayAnimalClip(3);
             goatTrue = false;
             ratTrue = false;
         }
-        if (Input.GetKeyDown(goatKey))
+        if (Input.GetKeyDown(goatKey) && currentCreature.CanChange())
         {
             ChangeToCreature(Creatures.Goat);
             _playerAudio.PlayAnimalClip(4);
