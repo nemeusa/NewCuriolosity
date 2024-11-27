@@ -18,17 +18,19 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Enemy enemy = other.GetComponent<Enemy>();
+        //Enemy enemy = other.GetComponent<Enemy>();
+        EnemyLife enemy = other.gameObject.GetComponent<EnemyLife>();
 
         collisionAnim.Play("Bullet1_Impact");
 
         if (enemy != null)
         {
             PlayImpactEnemClip();
-            enemy.Slow(slowAmount, slowDuration);
+            //enemy.Slow(slowAmount, slowDuration);
+            Destroy(other.gameObject);
+            Debug.Log("muerto pa");
         }
         Destroy(gameObject, collisionAnim["Bullet1_Impact"].length);
-        Debug.Log("choque xd");
     }
 
     public void PlayImpactClip()

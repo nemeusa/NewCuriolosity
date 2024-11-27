@@ -8,6 +8,7 @@ public class BulletEnemy : MonoBehaviour
     public float damage;
     [SerializeField] float speed;
     public bool isReflected;
+    public static bool noPuedeParriar;
 
     private void Start()
     {
@@ -40,11 +41,14 @@ public class BulletEnemy : MonoBehaviour
 
     public void Reflect()
     {
-        StopAllCoroutines();
-        StartCoroutine(DestroyBullet(2));
-        Renderer objRenderer = GetComponent<Renderer>();
-        objRenderer.material.color = Color.green;
-        isReflected = true;
+        if (!noPuedeParriar)
+        {
+            StopAllCoroutines();
+            StartCoroutine(DestroyBullet(2));
+            Renderer objRenderer = GetComponent<Renderer>();
+            objRenderer.material.color = Color.green;
+            isReflected = true;
+        }
     }
 
     IEnumerator DestroyBullet(float time)
