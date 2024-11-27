@@ -9,12 +9,14 @@ public class ChangeAnimal : MonoBehaviour
     public GameObject Turtle;
     public GameObject Goat;
     public GameObject Monkey;
+    public GameObject Bat;
 
     public AlienController AlienCode;
     public RatController RatCode;
     public TurtleController TurtleCode;
     public GoatController GoatCode;
     public GoatController MonkeyCode;
+    public GoatController BatCode;
 
     public ParticleSystem changeParticle;
 
@@ -22,7 +24,7 @@ public class ChangeAnimal : MonoBehaviour
 
     public Dictionary<Creatures, CreatureController> creaturesDictionary = new();
     public CreatureController currentCreature;
-    [SerializeField] KeyCode alienKey, ratKey, turtleKey, goatKey, monkeyKey;
+    [SerializeField] KeyCode alienKey, ratKey, turtleKey, goatKey, monkeyKey, batKey;
 
     public PlayerMovement playerMovement;
 
@@ -41,6 +43,7 @@ public class ChangeAnimal : MonoBehaviour
         creaturesDictionary.Add(Creatures.Turtle, new TurtleController(this, Turtle, 3.7f));
         creaturesDictionary.Add(Creatures.Goat, new GoatController(this, Goat, 6));
         creaturesDictionary.Add(Creatures.Monkey, new GoatController(this, Monkey, 6));
+        creaturesDictionary.Add(Creatures.Bat, new GoatController(this, Bat, 7));
 
         currentCreature = creaturesDictionary[Creatures.Alien];
         currentCreature.OnChange();
@@ -100,11 +103,20 @@ public class ChangeAnimal : MonoBehaviour
         if (Input.GetKeyDown(monkeyKey) && currentCreature.CanChange())
         {
             ChangeToCreature(Creatures.Monkey);
-            _playerAudio.PlayAnimalClip(4);
+            //_playerAudio.PlayAnimalClip(4);
             goatTrue = false;
             ratTrue = false;
             monkeyTrue = true;
             batTrue = false;
+        }
+        if (Input.GetKeyDown(batKey) && currentCreature.CanChange())
+        {
+            ChangeToCreature(Creatures.Bat);
+            //_playerAudio.PlayAnimalClip(4);
+            goatTrue = false;
+            ratTrue = false;
+            monkeyTrue = false;
+            batTrue = true;
         }
     }
 
@@ -150,5 +162,6 @@ public enum Creatures
     Rat,
     Turtle,
     Goat,
-    Monkey
+    Monkey,
+    Bat
 }

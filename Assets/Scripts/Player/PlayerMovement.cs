@@ -281,7 +281,32 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Bat()
     {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            isJumping = true;
+            jumpTimeCounter = 0.2f;
+            rb.velocity = new Vector3(rb.velocity.x, 6, rb.velocity.z);
+        }
 
+        // Continúa el salto mientras se mantiene el botón y haya tiempo de salto
+        if (Input.GetButton("Fire1") && isJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, 6, rb.velocity.z);
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false; // Finaliza el salto cuando se agota el tiempo
+            }
+        }
+
+        // Detiene el salto al soltar el botón
+        if (Input.GetButtonUp("Jump"))
+        {
+            isJumping = false;
+        }
     }
 
     #region rat
