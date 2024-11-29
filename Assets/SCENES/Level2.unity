@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13382646, g: 0.11731047, b: 0.22431424, a: 1}
+  m_IndirectSpecularColor: {r: 0.13409218, g: 0.11692176, b: 0.22431257, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3899,7 +3899,7 @@ GameObject:
   - component: {fileID: 972887566}
   - component: {fileID: 972887570}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: PasoNivel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4000,7 +4000,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 972887565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d25dbcaca91b43742b93f79b09830915, type: 3}
+  m_Script: {fileID: 11500000, guid: e2727425f12492e49b6796374f9386c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1060248341
