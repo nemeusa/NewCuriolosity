@@ -25,24 +25,23 @@ public class AudioManager : MonoBehaviour
 
 
     #region "Audio Sources"
-
     [Header("<color=#fce357>Sources</color>")]
     [SerializeField] private AudioMixer _mixer;
 
 
     [SerializeField] private AudioSource _impactSource;
-    public AudioSource ImpactSource { get { return _impactSource; } set { _impactSource = value; } }
+    public AudioSource ImpactSource { get { return _impactSource; } private set { } }
 
     
     [SerializeField] private AudioSource _impactEnemSource;
-    public AudioSource ImpactEnemSource { get { return _impactEnemSource; } set { _impactEnemSource = value; } }
+    public AudioSource ImpactEnemSource { get { return _impactEnemSource; } private set { } }
 
 
     [SerializeField] private AudioSource _mbgSource;
-    public AudioSource MBGSource { get { return _mbgSource; } set { _mbgSource = value; } }
+    public AudioSource MBGSource { get { return _mbgSource; } private set { } }
 
     [SerializeField] private AudioSource _fireSource;
-    public AudioSource FireSource { get { return _fireSource; } set { _fireSource = value; } }
+    public AudioSource FireSource { get { return _fireSource; } private set { } }
 
 
     private AudioSource _mSource;
@@ -57,6 +56,8 @@ public class AudioManager : MonoBehaviour
 
     private float _sfxVol = 0.0f;
     public float sfxVol { get { return _sfxVol; } set { _sfxVol = value; } }
+
+    [SerializeField] private Scene_Manager _sceneManager;
 
 
     #region VolumeSetting
@@ -97,5 +98,25 @@ public class AudioManager : MonoBehaviour
 
         _fireSource.Stop();
         _fireSource.enabled = false;
+
+        if(!_mSource.isPlaying) _mSource.Play();
+    }
+
+    public void StopMMmusic()
+    {
+        _sceneManager.GetCurrentScene();
+        if (_sceneManager.currentScene == 0)
+        {
+            _mbgSource.enabled = true;
+            _mbgSource.Play();
+
+            _fireSource.enabled = true;
+            _fireSource.Play();
+        }
+
+        if (_mbgSource.isPlaying || _fireSource.isPlaying)
+        {
+            _mSource.Stop();
+        }
     }
 }

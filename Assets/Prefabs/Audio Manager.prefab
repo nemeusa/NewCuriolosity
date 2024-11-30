@@ -54,6 +54,7 @@ MonoBehaviour:
   _impactEnemSource: {fileID: 6429339514598677350}
   _mbgSource: {fileID: 1441661521260351956}
   _fireSource: {fileID: 4954985770284145174}
+  _sceneManager: {fileID: 6465995132034871117, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
 --- !u!82 &3741382792275265217
 AudioSource:
   m_ObjectHideFlags: 0

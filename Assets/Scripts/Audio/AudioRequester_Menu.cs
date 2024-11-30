@@ -8,5 +8,6 @@ public class AudioRequester_Menu : MonoBehaviour
     {
         AudioManager.Instance.MBGSource.Play();
         AudioManager.Instance.FireSource.Play();
+        AudioManager.Instance.StopMMmusic();
     }
 }
