@@ -6,6 +6,7 @@ public class RatController : CreatureController
 {
     [SerializeField] float raycastMaxDistance = 2f;
     [SerializeField] LayerMask raycastMask;
+    int climpLayer = LayerMask.NameToLayer("Climp");
     //lic static bool dontChanges;
 
     public RatController(ChangeAnimal changeAnimal, GameObject mesh, float movSpeed) : base(changeAnimal, mesh, movSpeed)
@@ -32,9 +33,19 @@ public class RatController : CreatureController
 
     public override void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer == climpLayer && !PlayerMovement.climpSquirrel)
+        {
+            PlayerMovement.climpSquirrel = true;
+            PlayerMovement.enterLianas = true;
+        }
     }
     public override void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.layer == climpLayer)
+        {
+            Debug.Log("sali :D");
+            PlayerMovement.climpSquirrel = false;
+        }
     }
 
     public override void OnCollisionEnter(Collision collision)

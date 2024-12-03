@@ -150,7 +150,7 @@ public class ChangeAnimal : MonoBehaviour
     
     private void OnTriggerExit(Collider other)
     {
-        currentCreature.OnTriggerEnter(other);
+        currentCreature.OnTriggerExit(other);
     }
 
     private void OnCollisionEnter(Collision collision)

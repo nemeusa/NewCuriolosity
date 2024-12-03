@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     public int maxPulsaciones = 200;
     private int pulsacionesRestantes;
     private bool puedePlanear = true;
+    public static bool climpSquirrel;
+    [SerializeField] private Transform squirrelMesh;
 
     [Header("Monkey")]
     public static bool lianasActive;
@@ -76,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!changeCode.goatTrue && !wallJump && !lianasActive) Move();
+        if (!changeCode.goatTrue && !wallJump && !lianasActive && !climpSquirrel) Move();
         if (changeCode.goatTrue && !takeWall) MoveGoat();
         if (!changeCode.ratTrue && !changeCode.batTrue) Jump();
         if (changeCode.ratTrue) RatJump();
@@ -112,6 +114,8 @@ public class PlayerMovement : MonoBehaviour
         {
             lianasActive = false;
         }
+
+        if (!changeCode.ratTrue || takeFloor) climpSquirrel = false;
     }
 
 
@@ -361,6 +365,33 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Jump") && isJumping && puedePlanear && pulsacionesRestantes > 0 && rb.velocity.y <= 0 && !takeFloor)
         {
             StartCoroutine(Planear());
+        }
+
+        if (climpSquirrel)
+        {
+            if (Input.GetKey("d")) rb.velocity = new Vector3(rb.velocity.x, 4, rb.velocity.z);
+
+            else if (Input.GetKey("a")) rb.velocity = new Vector3(rb.velocity.x, -4, rb.velocity.z);
+
+            else if (!Input.GetKey("a") && !Input.GetKey("d")) rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
+            if (Input.GetButton("Jump")) climpSquirrel = false;
+
+            if (enterLianas)
+            {
+                rb.velocity = Vector3.zero;
+                enterLianas = false;
+            }
+            rb.useGravity = false;
+
+            //squirrelMesh.rotation = Quaternion.Euler(270, 0, 0);
+        }
+
+        if (!climpSquirrel && !rb.useGravity)
+        {
+            rb.useGravity = true;
+
+            //squirrelMesh.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
