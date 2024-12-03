@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BaseWood
+  m_Name: efewf
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 2100000, guid: 145e8dc2b1ed3c14296a9b681fc3410d, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -28,5 +28,5 @@ Material:
     - _Glossiness: 0.215
     - _Metallic: 0.204
     m_Colors:
-    - _Color: {r: 0.24528301, g: 0.15449357, b: 0.054147374, a: 1}
+    - _Color: {r: 0.20754719, g: 0.177498, b: 0.14619675, a: 1}
   m_BuildTextureStacks: []

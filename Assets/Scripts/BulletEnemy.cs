@@ -9,10 +9,10 @@ public class BulletEnemy : MonoBehaviour
     [SerializeField] float speed;
     public bool isReflected;
     public static bool noPuedeParriar;
-
+    [SerializeField] float destroyTime = 2.5f;
     private void Start()
     {
-        StartCoroutine(DestroyBullet(2.5f));
+        StartCoroutine(DestroyBullet(destroyTime));
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = -transform.up * speed;
     }
