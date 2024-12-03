@@ -228,7 +228,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (lianasGravity)
         {
-            if (rb.velocity.y < 0) rb.AddForce(Vector3.up * Physics.gravity.y * 2f, ForceMode.Acceleration);
+            if (rb.velocity.y < 0) rb.AddForce(Vector3.up * Physics.gravity.y * -0.2f, ForceMode.Acceleration);
         }
         if (enterLianas)
         {
