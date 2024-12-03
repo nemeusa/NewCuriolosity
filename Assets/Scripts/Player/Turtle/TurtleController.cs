@@ -88,6 +88,10 @@ public class TurtleController : CreatureController
         }
     }
 
+    public override void OnTriggerExit(Collider other)
+    {
+    }
+
     public override void OnCollisionEnter(Collision collision)
     {
     }

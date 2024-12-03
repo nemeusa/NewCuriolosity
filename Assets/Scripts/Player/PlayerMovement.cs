@@ -31,6 +31,16 @@ public class PlayerMovement : MonoBehaviour
     private int pulsacionesRestantes;
     private bool puedePlanear = true;
 
+    [Header("Monkey")]
+    public bool takeLianasR;
+    public bool takeLianasL;
+    public static bool lianasActive;
+    public Transform lianasRaycast;
+    public static bool enterLianas;
+    public bool wallLianas;
+    public static bool lianasGravity;
+
+
     [Header ("Jump")]
     [SerializeField] float forceJump;
     [Range(0,1)][SerializeField] float jumpTime;
@@ -43,14 +53,11 @@ public class PlayerMovement : MonoBehaviour
     public static bool takeWall;
     public bool takeWallJump;
     public bool takeWallJumpLeft;
-    public bool takeLianasR;
-    public bool takeLianasL;
     public ParticleSystem jumpParticles;
     [SerializeField]private bool wallJump;
-    [SerializeField]private bool lianasActive;
     public Transform wallJumpRaycast;
-    public Transform lianasRaycast;
     [SerializeField] string scene;
+
     
     [SerializeField] float gravityMultiplier;
     [SerializeField] float gravityMultiplierUp;
@@ -76,14 +83,16 @@ public class PlayerMovement : MonoBehaviour
         if (!changeCode.ratTrue && !changeCode.batTrue) Jump();
         else if (changeCode.ratTrue && !changeCode.batTrue) RatJump();
         else if (!changeCode.ratTrue && changeCode.batTrue) Bat();
+
     }
 
     private void Update()
     {
         takeWallJump = Physics.Raycast(wallJumpRaycast.position, Vector3.forward, 0.7f, wallMask);
         takeWallJumpLeft = Physics.Raycast(wallJumpRaycast.position, Vector3.back, 0.7f, wallMask);
-        takeLianasL = Physics.Raycast(lianasRaycast.position, Vector3.back, 1f, lianasMask);
-        takeLianasR = Physics.Raycast(lianasRaycast.position, Vector3.forward, 1f, lianasMask);
+        wallLianas = Physics.Raycast(lianasRaycast.position, Vector3.up, 2, wallMask);
+        //takeLianasL = Physics.Raycast(lianasRaycast.position, Vector3.back, 1f, lianasMask);
+        //takeLianasR = Physics.Raycast(lianasRaycast.position, Vector3.forward, 1f, lianasMask);
         plantZone = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, plantMask);
         changeLevel = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, levelMask);
 
@@ -100,6 +109,13 @@ public class PlayerMovement : MonoBehaviour
         {
             isJumping = false;
         }
+
+        if (!changeCode.monkeyTrue || takeFloor)
+        {
+            lianasActive = false;
+        }
+        
+       // if(lianasActive) Debug.Log(lianasActive);
     }
 
 
@@ -168,6 +184,8 @@ public class PlayerMovement : MonoBehaviour
 
         takeFloor = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, jumpMask);
 
+        if(takeFloor && lianasGravity || !changeCode.monkeyTrue) lianasGravity = false;
+
 
         if (isJump)
         {
@@ -199,7 +217,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplierUp / 2f), ForceMode.Acceleration);
         }
-        else if (rb.velocity.y < 0 && !takeFloor && !wallJump && !lianasActive)
+        else if (rb.velocity.y < 0 && !takeFloor && !wallJump && !lianasGravity)
         {
             rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplier), ForceMode.Acceleration);
         }
@@ -208,41 +226,59 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * Physics.gravity.y * (gravityMultiplier / 2f), ForceMode.Acceleration);
         }
 
-        if (Input.GetKey("w") && (takeLianasR || takeLianasL) && changeCode.monkeyTrue)
+        if (lianasGravity)
         {
-            lianasActive = true;
-            //rb.useGravity = false;
-            rb.velocity = new Vector3(rb.velocity.x, 0, 0);
-            //rb.AddForce(Vector3.up * Physics.gravity.y * (-1.6f), ForceMode.Acceleration);
+            if (rb.velocity.y < 0) rb.AddForce(Vector3.up * Physics.gravity.y * 2f, ForceMode.Acceleration);
         }
-        else if (!takeLianasL && !takeLianasR || Input.GetButtonUp("Jump")) lianasActive = false;
+        if (enterLianas)
+        {
+            rb.velocity = Vector3.zero;
+            enterLianas = false;
+        }
 
         if (lianasActive)
         {
-            if (rb.velocity.y < 0) rb.AddForce(Vector3.up * Physics.gravity.y * -1.2f, ForceMode.Acceleration);
+            //if (rb.velocity.y < 0) rb.AddForce(Vector3.up * Physics.gravity.y * -0.6f, ForceMode.Acceleration);
 
-
-            if (Input.GetButton("Jump"))
+            if (Input.GetAxis("Horizontal") > 0)
             {
-                //float jump = Input.GetAxis("Jump");
-                //rb.velocity = new Vector3(rb.velocity.x, jump + 5,rb.velocity.z);
-                Debug.Log("haciendo lianas jump");
-                rb.AddForce(Vector3.up * 1.8f, ForceMode.Impulse);
-
-                if (Input.GetKey("d"))
-                {
-                    rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 6);
-                    Debug.Log("salto a la derecha");
-                    //transform.rotation = Quaternion.Euler(0, 0, 0);
-                }
-
-                else if (!Input.GetKey("a"))
-                {
-                    rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -6);
-                    Debug.Log("salto a la izquierda");
-                    //transform.rotation = Quaternion.Euler(0, 180, 0);
-                }
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
+
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            
+            if (Input.GetButton("Jump") && !wallLianas)
+            {
+                //rb.AddForce(Vector3.up * 1.8f, ForceMode.F);
+                rb.velocity = new Vector3(rb.velocity.x, 4, rb.velocity.z);
+                Debug.Log("subiendo lianas xd");
+            }
+
+
+            //if (Input.GetAxis("Horizontal") < 0 && Input.GetButton("Jump"))
+            if (Input.GetKey("d") && Input.GetButton("Jump"))
+            {
+                rb.AddForce(Vector3.up * 1.8f, ForceMode.Impulse);
+                    //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, );
+                //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, Input.GetAxis("Horizontal") * 15);
+                Debug.Log("salto a la derecha");
+                    //transform.rotation = Quaternion.Euler(0, 0, 0);
+                lianasActive = false;
+            }
+
+            //else if(Input.GetAxis("Horizontal") > 0 && Input.GetButton("Jump"))
+            else if(Input.GetKey("a") && Input.GetButton("Jump"))
+            {
+                rb.AddForce(Vector3.up * 1.8f, ForceMode.Impulse);
+                //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, -16);
+                Debug.Log("salto a la izquierda");
+                    //transform.rotation = Quaternion.Euler(0, 180, 0);
+                lianasActive = false;
+            }
+                
         }
 
         //Codigo de wall jump
@@ -253,10 +289,10 @@ public class PlayerMovement : MonoBehaviour
             wallJump = true;
             Debug.Log("se activo wall jump");
         }
-        else if (takeFloor)
+        else if ((takeFloor || !changeCode.alienTrue) && wallJump)
         {
             wallJump = false;
-            //Debug.Log("se desactivo wall jump");
+            Debug.Log("se desactivo wall jump");
         }
 
         if (Input.GetButton("Jump") && wallJump && (takeWallJump || takeWallJumpLeft))

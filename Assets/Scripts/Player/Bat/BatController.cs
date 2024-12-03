@@ -24,6 +24,10 @@ public class BatController : CreatureController
     {
     }
 
+    public override void OnTriggerExit(Collider other)
+    {
+    }
+
     public override void OnUpdate()
     {
     }

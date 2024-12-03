@@ -5,8 +5,8 @@ using UnityEngine;
 public class GoatController : CreatureController
 {
     [SerializeField] float _velocityForDestruction = 12f;
-    [SerializeField] private float maxSpeed = 20f;
-    [SerializeField] private float acceleration = .5f;
+   // [SerializeField] private float maxSpeed = 20f;
+   // [SerializeField] private float acceleration = .5f;
     public static float currentSpeed;
     private float velocidadPreColision;
     public static bool Destruction;
@@ -49,6 +49,9 @@ public class GoatController : CreatureController
     {
     }
 
+    public override void OnTriggerExit(Collider other)
+    {
+    }
 
     public override void OnUpdate()
     {

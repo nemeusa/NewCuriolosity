@@ -1577,7 +1577,6 @@ GameObject:
   - component: {fileID: 3058837120897263061}
   - component: {fileID: 3342071441665112824}
   - component: {fileID: 7626316641239599068}
-  - component: {fileID: 4863783160704613617}
   m_Layer: 0
   m_Name: Player OG 1
   m_TagString: Player
@@ -1637,18 +1636,18 @@ MonoBehaviour:
   helicopterTime: 1
   cooldownHelicopter: 0
   maxPulsaciones: 300
+  takeLianasR: 0
+  takeLianasL: 0
+  lianasRaycast: {fileID: 8066238819102473562}
+  wallLianas: 0
   forceJump: 9.3
   jumpTime: 0.7
   plantZone: 0
   takeWallJump: 0
   takeWallJumpLeft: 0
-  takeLianasR: 0
-  takeLianasL: 0
   jumpParticles: {fileID: 25041311720177796}
   wallJump: 0
-  lianasActive: 0
   wallJumpRaycast: {fileID: 6283190922883148634}
-  lianasRaycast: {fileID: 8066238819102473562}
   scene: Movimiento
   gravityMultiplier: 2
   gravityMultiplierUp: 2.5
@@ -1726,6 +1725,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 72
+  alienTrue: 0
   goatTrue: 0
   ratTrue: 0
   monkeyTrue: 0
@@ -1788,18 +1788,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6872482376863884500}
   m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7263678fb29d4644bb544019de6d540d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4863783160704613617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6872482376863884500}
-  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7263678fb29d4644bb544019de6d540d, type: 3}
   m_Name: 

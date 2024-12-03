@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonkeyController : CreatureController
 {
+    int lianaLayer = LayerMask.NameToLayer("Lianas");
     public MonkeyController(ChangeAnimal changeAnimal, GameObject mesh, float movSpeed) : base(changeAnimal, mesh, movSpeed)
     {
     }
@@ -22,6 +23,23 @@ public class MonkeyController : CreatureController
 
     public override void OnTriggerEnter(Collider other)
     {
+        //int lianaLayer = LayerMask.NameToLayer("Lianas");
+
+        if (other.gameObject.layer == lianaLayer)
+        {
+            PlayerMovement.lianasActive = true;
+            PlayerMovement.enterLianas = true;
+            PlayerMovement.lianasGravity = true;
+            Debug.Log("enaganchado pa");
+        }
+    }
+
+    public override void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == lianaLayer)
+        {
+            PlayerMovement.lianasActive = false;
+        }
     }
 
     public override void OnUpdate()
@@ -30,6 +48,5 @@ public class MonkeyController : CreatureController
 
     public override void OnCollisionStay(Collision other)
     {
-
     }
 }

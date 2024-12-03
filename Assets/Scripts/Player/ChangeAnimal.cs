@@ -30,6 +30,7 @@ public class ChangeAnimal : MonoBehaviour
 
     public LayerMask layerMask;
 
+    public bool alienTrue;
     public bool goatTrue;
     public bool ratTrue;
     public bool monkeyTrue;
@@ -42,11 +43,13 @@ public class ChangeAnimal : MonoBehaviour
         creaturesDictionary.Add(Creatures.Rat, new RatController(this, Rat, 5.6f));
         creaturesDictionary.Add(Creatures.Turtle, new TurtleController(this, Turtle, 3.7f));
         creaturesDictionary.Add(Creatures.Goat, new GoatController(this, Goat, 6));
-        creaturesDictionary.Add(Creatures.Monkey, new GoatController(this, Monkey, 6));
-        creaturesDictionary.Add(Creatures.Bat, new GoatController(this, Bat, 7));
+        creaturesDictionary.Add(Creatures.Monkey, new MonkeyController(this, Monkey, 6));
+        creaturesDictionary.Add(Creatures.Bat, new BatController(this, Bat, 7));
 
         currentCreature = creaturesDictionary[Creatures.Alien];
         currentCreature.OnChange();
+
+        alienTrue = true;
 
     }
 
@@ -68,6 +71,7 @@ public class ChangeAnimal : MonoBehaviour
         {
             ChangeToCreature(Creatures.Alien);
             _playerAudio.PlayAnimalClip(1);
+            alienTrue = true;
             goatTrue = false;
             ratTrue = false;
             monkeyTrue = false;
@@ -77,6 +81,7 @@ public class ChangeAnimal : MonoBehaviour
         {
             ChangeToCreature(Creatures.Rat);
             _playerAudio.PlayAnimalClip(2);
+            alienTrue = false;
             goatTrue = false;
             ratTrue = true;
             monkeyTrue = false;
@@ -86,6 +91,7 @@ public class ChangeAnimal : MonoBehaviour
         {
             ChangeToCreature(Creatures.Turtle);
             _playerAudio.PlayAnimalClip(3);
+            alienTrue = false;
             goatTrue = false;
             ratTrue = false;
             monkeyTrue = false;
@@ -95,6 +101,7 @@ public class ChangeAnimal : MonoBehaviour
         {
             ChangeToCreature(Creatures.Goat);
             _playerAudio.PlayAnimalClip(4);
+            alienTrue = false;
             goatTrue = true;
             ratTrue = false;
             monkeyTrue = false;
@@ -104,6 +111,7 @@ public class ChangeAnimal : MonoBehaviour
         {
             ChangeToCreature(Creatures.Monkey);
             //_playerAudio.PlayAnimalClip(4);
+            alienTrue = false;
             goatTrue = false;
             ratTrue = false;
             monkeyTrue = true;
@@ -113,6 +121,7 @@ public class ChangeAnimal : MonoBehaviour
         {
             ChangeToCreature(Creatures.Bat);
             //_playerAudio.PlayAnimalClip(4);
+            alienTrue = false;
             goatTrue = false;
             ratTrue = false;
             monkeyTrue = false;
@@ -135,6 +144,11 @@ public class ChangeAnimal : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
+    {
+        currentCreature.OnTriggerEnter(other);
+    }
+    
+    private void OnTriggerExit(Collider other)
     {
         currentCreature.OnTriggerEnter(other);
     }

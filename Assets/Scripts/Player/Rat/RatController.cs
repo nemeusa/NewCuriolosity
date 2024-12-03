@@ -33,6 +33,9 @@ public class RatController : CreatureController
     public override void OnTriggerEnter(Collider other)
     {
     }
+    public override void OnTriggerExit(Collider other)
+    {
+    }
 
     public override void OnCollisionEnter(Collision collision)
     {

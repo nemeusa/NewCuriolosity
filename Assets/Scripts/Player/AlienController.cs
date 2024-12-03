@@ -23,6 +23,9 @@ public class AlienController : CreatureController
     public override void OnTriggerEnter(Collider other)
     {
     }
+    public override void OnTriggerExit(Collider other)
+    {
+    }
 
     public override void OnUpdate()
     {
