@@ -20,6 +20,7 @@ public class DefeatManager : MonoBehaviour
     }
 
     [SerializeField] private PlayerLife _playerLife;
+    [SerializeField] private Transform _playerPosition;
     [SerializeField] private Scene_Manager _scnMng;
     public int deadInScene = 0;
     public int currentScene = 0;
@@ -35,7 +36,7 @@ public class DefeatManager : MonoBehaviour
         if (currentScene > 3 && currentScene < 7)
         {
             deadInScene = currentScene;
-            Debug.Log("muerto en escena:" + deadInScene);
+            Debug.Log("muerto en escena:" + deadInScene + "en posición: " + _playerPosition.position);
         }
     }
 }

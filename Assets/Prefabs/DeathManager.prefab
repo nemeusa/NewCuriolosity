@@ -45,4 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerLife: {fileID: 918859695577435547, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
+  _playerPosition: {fileID: 8120475541667437657, guid: 6e586042cfb61354aa28815534eaebb3, type: 3}
   _scnMng: {fileID: 6465995132034871117, guid: 2abadf13c9b24014a867c0c81e55c984, type: 3}
+  deadInScene: 0
+  currentScene: 0
