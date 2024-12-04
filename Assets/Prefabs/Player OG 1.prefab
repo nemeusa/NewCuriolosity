@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a5171f1f83c384ca2d14b3d40f07b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
   Bullet: {fileID: 8309605663653848022, guid: 4d7577d7dc444cb4c89eb219f2603fed, type: 3}
   Bullet2: {fileID: 2722269077554574065, guid: 8dac8da1d31ac3944bdb393641ff8821, type: 3}
   spawnBullet: {fileID: 215832224752066558}
@@ -1369,6 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a5171f1f83c384ca2d14b3d40f07b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
   Bullet: {fileID: 8309605663653848022, guid: 4d7577d7dc444cb4c89eb219f2603fed, type: 3}
   Bullet2: {fileID: 2722269077554574065, guid: 8dac8da1d31ac3944bdb393641ff8821, type: 3}
   spawnBullet: {fileID: 215832224752066558}
@@ -1557,6 +1559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a5171f1f83c384ca2d14b3d40f07b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
   Bullet: {fileID: 8309605663653848022, guid: 2c72f066761fa8047bacced5a6c76386, type: 3}
   Bullet2: {fileID: 2722269077554574065, guid: 8dac8da1d31ac3944bdb393641ff8821, type: 3}
   spawnBullet: {fileID: 215832224752066558}
@@ -1853,7 +1856,7 @@ MonoBehaviour:
   alienKey: 49
   ratKey: 50
   turtleKey: 51
-  goatKey: 57
+  goatKey: 52
   monkeyKey: 53
   batKey: 54
   playerMovement: {fileID: 2619884805805254532}
