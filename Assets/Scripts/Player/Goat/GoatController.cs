@@ -47,10 +47,23 @@ public class GoatController : CreatureController
 
     public override void OnTriggerEnter(Collider other)
     {
+        int batLayer = LayerMask.NameToLayer("BatActive");
+
+        if (other.gameObject.layer == batLayer)
+        {
+            ChangeAnimal.batTrue = true;
+            ChangeAnimal.batInto = true;
+        }
     }
 
     public override void OnTriggerExit(Collider other)
     {
+        int batLayer = LayerMask.NameToLayer("BatActive");
+        if (other.gameObject.layer == batLayer)
+        {
+            ChangeAnimal.batTrue = true;
+            ChangeAnimal.batInto = true;
+        }
     }
 
     public override void OnUpdate()

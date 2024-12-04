@@ -36,6 +36,7 @@ public class BatController : CreatureController
             ChangeAnimal.batTrue = false;
             ChangeAnimal.alienInto = true;
         }
+            ChangeAnimal.batTrue = false;
     }
 
     public override void OnUpdate()

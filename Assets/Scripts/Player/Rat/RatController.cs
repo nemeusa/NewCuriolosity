@@ -38,6 +38,14 @@ public class RatController : CreatureController
             PlayerMovement.climpSquirrel = true;
             PlayerMovement.enterLianas = true;
         }
+
+        int batLayer = LayerMask.NameToLayer("BatActive");
+
+        if (other.gameObject.layer == batLayer)
+        {
+            ChangeAnimal.batTrue = true;
+            ChangeAnimal.batInto = true;
+        }
     }
     public override void OnTriggerExit(Collider other)
     {
@@ -50,6 +58,7 @@ public class RatController : CreatureController
 
     public override void OnCollisionEnter(Collision collision)
     {
+
     }
     public override void OnCollisionStay(Collision other)
     {

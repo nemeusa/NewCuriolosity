@@ -34,6 +34,7 @@ public class ChangeAnimal : MonoBehaviour
     public bool goatTrue;
     public bool ratTrue;
     public bool monkeyTrue;
+    public bool cambiando;
     public static bool batTrue;
     public static bool batInto;
     public static bool alienInto;
@@ -79,6 +80,7 @@ public class ChangeAnimal : MonoBehaviour
             monkeyTrue = false;
             batTrue = false;
             alienInto = false;
+            cambiando = true;
         }
         if (Input.GetKeyDown(ratKey) && currentCreature.CanChange() && !batTrue)
         {
@@ -89,6 +91,7 @@ public class ChangeAnimal : MonoBehaviour
             ratTrue = true;
             monkeyTrue = false;
             batTrue = false;
+            cambiando = true;
         }
         if (Input.GetKeyDown(turtleKey) && currentCreature.CanChange() && !batTrue)
         {
@@ -99,8 +102,9 @@ public class ChangeAnimal : MonoBehaviour
             ratTrue = false;
             monkeyTrue = false;
             batTrue = false;
+            cambiando = true;
         }
-        if (Input.GetKeyDown(goatKey) && currentCreature.CanChange() && !batTrue)
+        if (Input.GetKeyDown(goatKey) && currentCreature.CanChange() && !batTrue && !PlayerMovement.takeWall)
         {
             ChangeToCreature(Creatures.Goat);
             _playerAudio.PlayAnimalClip(4);
@@ -109,6 +113,7 @@ public class ChangeAnimal : MonoBehaviour
             ratTrue = false;
             monkeyTrue = false;
             batTrue = false;
+            cambiando = true;
         } 
         if (Input.GetKeyDown(monkeyKey) && currentCreature.CanChange() && !batTrue)
         {
@@ -119,6 +124,7 @@ public class ChangeAnimal : MonoBehaviour
             ratTrue = false;
             monkeyTrue = true;
             batTrue = false;
+            cambiando = true;
         }
         if (batTrue && currentCreature.CanChange() && batInto)
         {
@@ -129,6 +135,7 @@ public class ChangeAnimal : MonoBehaviour
             ratTrue = false;
             monkeyTrue = false;
             batInto = false;
+            cambiando = true;
         }
     }
 

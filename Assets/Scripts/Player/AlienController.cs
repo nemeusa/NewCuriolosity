@@ -40,7 +40,9 @@ public class AlienController : CreatureController
 
     public override void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.CompareTag("Wall"))
+        int wallLayer = LayerMask.NameToLayer("Wall");
+
+        if (other.gameObject.layer == wallLayer)
         {
             PlayerMovement.takeWall = true;
         }

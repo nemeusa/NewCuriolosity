@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpTimeCounter;
     private bool isJump;
     private bool isJumping;
-    private bool takeFloor;
+    public static bool takeFloor;
     private bool changeLevel;
     public bool plantZone;
     public static bool takeWall;
@@ -86,6 +86,12 @@ public class PlayerMovement : MonoBehaviour
         if (changeCode.monkeyTrue) lianas();
         if (changeCode.alienTrue) WallJump();
         if (!changeCode.alienTrue && wallJump) wallJump = false;
+
+        if (changeCode.cambiando)
+        {
+            rb.velocity = Vector3.zero;
+            changeCode.cambiando = false;
+        }
     }
 
     private void Update()
@@ -95,6 +101,13 @@ public class PlayerMovement : MonoBehaviour
         wallLianas = Physics.Raycast(lianasRaycast.position, Vector3.up, 2, wallMask);
         plantZone = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, plantMask);
         changeLevel = Physics.Raycast(transform.position, Vector3.down, raycastMaxDistance, levelMask);
+
+        if (takeFloor && ChangeAnimal.batTrue)
+        {
+            ChangeAnimal.batTrue = false;
+            ChangeAnimal.batInto = false;
+            ChangeAnimal.alienInto = true;
+        }
 
         if (changeLevel)
         {
