@@ -13,6 +13,7 @@ public class PlayerLife : MonoBehaviour
     public Image _healthBar;
 
     [SerializeField] float _life;
+    public float life { get { return _life; } }
     public bool IsParry;
     GameObject turtle;
 

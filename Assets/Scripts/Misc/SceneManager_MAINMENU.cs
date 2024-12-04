@@ -37,6 +37,7 @@ public class SceneManager_MAINMENU : MonoBehaviour
             _pauseMenu.SetActive(false);
             _justPause = false;
         }
+
     }
     public void Resume()
     {
@@ -142,7 +143,7 @@ public class SceneManager_MAINMENU : MonoBehaviour
         _transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(_transitionTime);
         Debug.Log("Gameplay");
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(DefeatManager.Instance.deadInScene);
         _transitionAnim.SetTrigger("Start");
     }
     IEnumerator LoadLevelQuit()

@@ -1731,7 +1731,6 @@ MonoBehaviour:
   goatTrue: 0
   ratTrue: 0
   monkeyTrue: 0
-  batTrue: 0
 --- !u!114 &918859695577435547
 MonoBehaviour:
   m_ObjectHideFlags: 0
