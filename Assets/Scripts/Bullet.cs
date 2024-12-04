@@ -13,13 +13,15 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);   
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        Destroy(gameObject, 0.7f);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         //Enemy enemy = other.GetComponent<Enemy>();
         EnemyLife enemy = other.gameObject.GetComponent<EnemyLife>();
+        WallBull wall = other.gameObject.GetComponent<WallBull>();
 
         collisionAnim.Play("Bullet1_Impact");
 
@@ -30,7 +32,13 @@ public class Bullet : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log("muerto pa");
         }
-        Destroy(gameObject, collisionAnim["Bullet1_Impact"].length);
+
+        if (wall != null)
+        {
+            PlayImpactEnemClip();
+            Destroy(other.gameObject);
+        }
+            Destroy(gameObject, collisionAnim["Bullet1_Impact"].length);
     }
 
     public void PlayImpactClip()

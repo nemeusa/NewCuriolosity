@@ -311,7 +311,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Bat()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Jump"))
         {
             rb.velocity = new Vector3(rb.velocity.x, 6, rb.velocity.z);
             jumpTimeCounter -= Time.deltaTime;
