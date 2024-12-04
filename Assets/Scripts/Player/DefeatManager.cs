@@ -35,6 +35,7 @@ public class DefeatManager : MonoBehaviour
         if (currentScene > 3 && currentScene < 7)
         {
             deadInScene = currentScene;
+            Debug.Log("muerto en escena:" + deadInScene);
         }
     }
 }

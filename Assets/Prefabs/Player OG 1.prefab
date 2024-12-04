@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a831ed8eca0f11c4c80ea2f77763dcb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 3
+  raycastDistance: 2
   raycast1: {fileID: 6169201272295474717}
   raycast2: {fileID: 6294659002497336411}
 --- !u!1 &1548406845712857410
