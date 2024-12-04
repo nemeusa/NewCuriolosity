@@ -10,6 +10,9 @@ public class BulletEnemy : MonoBehaviour
     public bool isReflected;
     public static bool noPuedeParriar;
     [SerializeField] float destroyTime = 2.5f;
+    [SerializeField] float parryTime = 2;
+    public static bool interruptor;
+
     private void Start()
     {
         StartCoroutine(DestroyBullet(destroyTime));
@@ -37,6 +40,10 @@ public class BulletEnemy : MonoBehaviour
             Debug.Log("anda crack");
         }
         else if (enemy == null && TurtleController.isParrying) Debug.Log("no anda pa´");
+
+        int interruptorLayer = LayerMask.NameToLayer("Interruptor");
+
+        if (other.gameObject.layer == interruptorLayer) interruptor = true;
     }
 
     public void Reflect()
@@ -44,7 +51,7 @@ public class BulletEnemy : MonoBehaviour
         if (!noPuedeParriar)
         {
             StopAllCoroutines();
-            StartCoroutine(DestroyBullet(2));
+            StartCoroutine(DestroyBullet(parryTime));
             Renderer objRenderer = GetComponent<Renderer>();
             objRenderer.material.color = Color.green;
             isReflected = true;

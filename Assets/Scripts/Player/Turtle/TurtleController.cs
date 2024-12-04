@@ -7,6 +7,7 @@ public class TurtleController : CreatureController
     public float parryWindow = 1f;
     public static bool isParrying = false;
     [SerializeField] private GameObject turtle;
+    [SerializeField] private float bulletHorizontal = 4;
     
     [SerializeField] float raycastMaxDistance = 2f;
     [SerializeField] LayerMask raycastMask;
@@ -60,8 +61,8 @@ public class TurtleController : CreatureController
 
         if (rb != null && Input.GetButton("Horizontal"))
         {
-            if (Dir > 0) rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z + 2);
-            else if (Dir < 0) rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z - 2);
+            if (Dir > 0) rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z + bulletHorizontal);
+            else if (Dir < 0) rb.velocity = new Vector3(rb.velocity.x, -rb.velocity.y, rb.velocity.z - bulletHorizontal);
 
             bullet.Reflect();
 
