@@ -104,7 +104,7 @@ public class ChangeAnimal : MonoBehaviour
             batTrue = false;
             cambiando = true;
         }
-        if (Input.GetKeyDown(goatKey) && currentCreature.CanChange() && !batTrue && !PlayerMovement.takeWall)
+        if (Input.GetKeyDown(goatKey) && currentCreature.CanChange() && !batTrue && !PlayerMovement.takeWall && !DontGoat.dontGoat)
         {
             ChangeToCreature(Creatures.Goat);
             _playerAudio.PlayAnimalClip(4);
