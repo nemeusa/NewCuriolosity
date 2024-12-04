@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BatController : CreatureController
 {
+    int batLayer = LayerMask.NameToLayer("BatActive");
     public BatController(ChangeAnimal changeAnimal, GameObject mesh, float movSpeed) : base(changeAnimal, mesh, movSpeed)
     {
     }
@@ -22,10 +23,19 @@ public class BatController : CreatureController
 
     public override void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer == batLayer)
+        {
+            ChangeAnimal.batTrue = true;
+        }
     }
 
     public override void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.layer == batLayer)
+        {
+            ChangeAnimal.batTrue = false;
+            ChangeAnimal.alienInto = true;
+        }
     }
 
     public override void OnUpdate()

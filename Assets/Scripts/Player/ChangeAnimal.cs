@@ -34,7 +34,9 @@ public class ChangeAnimal : MonoBehaviour
     public bool goatTrue;
     public bool ratTrue;
     public bool monkeyTrue;
-    public bool batTrue;
+    public static bool batTrue;
+    public static bool batInto;
+    public static bool alienInto;
 
 
     private void Start()
@@ -67,7 +69,7 @@ public class ChangeAnimal : MonoBehaviour
 
     private void ChangePlayer()
     {
-        if (Input.GetKeyDown(alienKey) && currentCreature.CanChange())
+        if (Input.GetKeyDown(alienKey) && currentCreature.CanChange() && !batTrue || alienInto)
         {
             ChangeToCreature(Creatures.Alien);
             _playerAudio.PlayAnimalClip(1);
@@ -76,8 +78,9 @@ public class ChangeAnimal : MonoBehaviour
             ratTrue = false;
             monkeyTrue = false;
             batTrue = false;
+            alienInto = false;
         }
-        if (Input.GetKeyDown(ratKey) && currentCreature.CanChange())
+        if (Input.GetKeyDown(ratKey) && currentCreature.CanChange() && !batTrue)
         {
             ChangeToCreature(Creatures.Rat);
             _playerAudio.PlayAnimalClip(2);
@@ -87,7 +90,7 @@ public class ChangeAnimal : MonoBehaviour
             monkeyTrue = false;
             batTrue = false;
         }
-        if (Input.GetKeyDown(turtleKey) && currentCreature.CanChange())
+        if (Input.GetKeyDown(turtleKey) && currentCreature.CanChange() && !batTrue)
         {
             ChangeToCreature(Creatures.Turtle);
             _playerAudio.PlayAnimalClip(3);
@@ -97,7 +100,7 @@ public class ChangeAnimal : MonoBehaviour
             monkeyTrue = false;
             batTrue = false;
         }
-        if (Input.GetKeyDown(goatKey) && currentCreature.CanChange())
+        if (Input.GetKeyDown(goatKey) && currentCreature.CanChange() && !batTrue)
         {
             ChangeToCreature(Creatures.Goat);
             _playerAudio.PlayAnimalClip(4);
@@ -107,7 +110,7 @@ public class ChangeAnimal : MonoBehaviour
             monkeyTrue = false;
             batTrue = false;
         } 
-        if (Input.GetKeyDown(monkeyKey) && currentCreature.CanChange())
+        if (Input.GetKeyDown(monkeyKey) && currentCreature.CanChange() && !batTrue)
         {
             ChangeToCreature(Creatures.Monkey);
             _playerAudio.PlayAnimalClip(5);
@@ -117,7 +120,7 @@ public class ChangeAnimal : MonoBehaviour
             monkeyTrue = true;
             batTrue = false;
         }
-        if (Input.GetKeyDown(batKey) && currentCreature.CanChange())
+        if (batTrue && currentCreature.CanChange() && batInto)
         {
             ChangeToCreature(Creatures.Bat);
             _playerAudio.PlayAnimalClip(6);
@@ -125,7 +128,7 @@ public class ChangeAnimal : MonoBehaviour
             goatTrue = false;
             ratTrue = false;
             monkeyTrue = false;
-            batTrue = true;
+            batInto = false;
         }
     }
 

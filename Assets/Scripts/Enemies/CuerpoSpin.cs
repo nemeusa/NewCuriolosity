@@ -21,12 +21,9 @@ public class CuerpoSpin : MonoBehaviour
         {
             Vector3 direction = (player.position - transform.position).normalized;
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, direction.z * speed);
-            Debug.Log(" te sigoooo");
         }
         else
         {
-            Debug.Log("no te sigoooo :(");
-            // Detener al enemigo si está fuera del rango
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
         }
     }
