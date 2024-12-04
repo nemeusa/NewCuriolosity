@@ -149,4 +149,5 @@ MonoBehaviour:
   damage: 10
   speed: 10
   isReflected: 0
-  noPuedeParriar: 0
+  destroyTime: 1.2
+  parryTime: 2
