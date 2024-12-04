@@ -110,7 +110,7 @@ public class ChangeAnimal : MonoBehaviour
         if (Input.GetKeyDown(monkeyKey) && currentCreature.CanChange())
         {
             ChangeToCreature(Creatures.Monkey);
-            //_playerAudio.PlayAnimalClip(4);
+            _playerAudio.PlayAnimalClip(5);
             alienTrue = false;
             goatTrue = false;
             ratTrue = false;
@@ -120,7 +120,7 @@ public class ChangeAnimal : MonoBehaviour
         if (Input.GetKeyDown(batKey) && currentCreature.CanChange())
         {
             ChangeToCreature(Creatures.Bat);
-            //_playerAudio.PlayAnimalClip(4);
+            _playerAudio.PlayAnimalClip(6);
             alienTrue = false;
             goatTrue = false;
             ratTrue = false;

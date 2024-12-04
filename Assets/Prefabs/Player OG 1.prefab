@@ -352,6 +352,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eccc89b36bfb59347a03d171f055896d, type: 3}
   - {fileID: 8300000, guid: 439de8ad36c4a37408b30e3fc215e38c, type: 3}
   - {fileID: 8300000, guid: dcaebb1789b2c05418d9af6174147e62, type: 3}
+  - {fileID: 8300000, guid: a184b09c0a40428478b36d673b16e746, type: 3}
+  - {fileID: 8300000, guid: 7623d9f111fba3a46aea60c320bc7305, type: 3}
+  - {fileID: 8300000, guid: 72f333545168b9444988982d55c741cd, type: 3}
   _damageClips:
   - {fileID: 8300000, guid: 5b3d1bb7d3e07564b9000fc83c94acc2, type: 3}
   - {fileID: 8300000, guid: dc1d13cf17d6f2241afea2e7257dc6e2, type: 3}
@@ -1636,8 +1639,7 @@ MonoBehaviour:
   helicopterTime: 1
   cooldownHelicopter: 0
   maxPulsaciones: 300
-  takeLianasR: 0
-  takeLianasL: 0
+  squirrelMesh: {fileID: 0}
   lianasRaycast: {fileID: 8066238819102473562}
   wallLianas: 0
   forceJump: 9.3

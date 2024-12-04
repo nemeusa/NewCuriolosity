@@ -48,6 +48,18 @@ public class PlayerAudio : MonoBehaviour
             _sources[2].clip = _animalClips[3];
             _sources[2].Play();
         }
+
+        if(animal == 5)
+        {
+            PickMonkeyCLip();
+            _sources[2].Play();
+        }
+
+        if (animal == 6)
+        {
+            _sources[2].clip = _animalClips[6];
+            _sources[2].Play();
+        }
     }
 
     public void PlayLifeClip(float life)
@@ -72,5 +84,18 @@ public class PlayerAudio : MonoBehaviour
         if (_currentAnimal == 4) _sources[4].clip = _skillClips[1];
 
         _sources[4].Play();
+    }
+
+    public void PickMonkeyCLip()
+    {
+        var chance = Random.Range(0, 11);
+        if (chance > 2)
+        {
+            _sources[2].clip = _animalClips[4];
+        }
+        else
+        {
+            _sources[2].clip = _animalClips[5];
+        }
     }
 }
